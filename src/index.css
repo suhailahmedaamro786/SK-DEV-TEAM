@@ -75,6 +75,7 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #c6cede; }
 
 
 /* Responsive foundations: prevent accidental horizontal page overflow. */
+/* Keep media and controls inside the viewport; allow long labels/URLs to wrap instead of widening the page. */
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
   html { width: 100%; max-width: 100%; overflow-x: clip; scroll-padding-top: 5.5rem; }
@@ -86,13 +87,14 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #c6cede; }
   input, textarea, select { min-width: 0; }
 }
 
-/* Small phones */
+/* Small phones: reserve room for the fixed navbar and collapse card grids to one readable column. */
 @media (max-width: 420px) {
   main { padding-top: 4.5rem !important; }
   section[id] { scroll-margin-top: 5.5rem; }
   .responsive-card-grid { grid-template-columns: minmax(0, 1fr) !important; }
 }
 
+/* On phones, keep fixed widgets inset, form text comfortably readable, and wide tables scrollable inside their wrapper. */
 /* Respect reduced-motion preferences and avoid oversized decorative effects. */
 @media (max-width: 640px) {
   .max-w-\[1440px\] { max-width: 100%; }

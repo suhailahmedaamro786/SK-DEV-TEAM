@@ -515,7 +515,8 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
       
       {/* Top Admin Bar */}
       <div className="w-full bg-[#18191f] border-b border-[#33353a] px-4 sm:px-8 py-4">
-        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+        {/* Responsive dashboard header: stack the session details and actions on narrow screens. */}
+        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <button
               type="button"
@@ -569,8 +570,8 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
           )}
         </div>
         
-        {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 border-b border-[#33353a] pb-4 overflow-x-auto">
+        {/* Navigation Tabs: horizontal scrolling keeps every admin section reachable on mobile. */}
+        <div className="flex items-center gap-2 border-b border-[#33353a] pb-4 overflow-x-auto whitespace-nowrap">
           <button
             type="button"
             onClick={() => setActiveSection('overview')}

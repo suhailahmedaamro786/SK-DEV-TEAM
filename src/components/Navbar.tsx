@@ -18,10 +18,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-[#111318]/85 backdrop-blur-xl border-b border-[#33353a]/50">
-      <div className="h-20 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
+      <div className="h-16 sm:h-20 w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-6">
         
         {/* Brand Zone */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
           <button
             type="button"
             onClick={() => onNavigate('home')}
@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 SK
               </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col min-w-0">
               <span className="font-extrabold text-base sm:text-lg tracking-tight text-[#e2e2e9] leading-none">
                 SK DEV TEAM
               </span>
@@ -104,12 +104,12 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Right Action Cluster */}
-        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
           {/* AI Robot Quick Button */}
           <button
             type="button"
             onClick={onOpenRobot}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1e1f25] hover:bg-[#282a2f] text-[#c4c0ff] border border-[#8781ff]/40 shadow-sm transition-all hover:scale-[1.02] text-xs sm:text-sm font-semibold"
+            className="flex items-center justify-center gap-1.5 px-2 sm:px-3 py-2 rounded-xl bg-[#1e1f25] hover:bg-[#282a2f] text-[#c4c0ff] border border-[#8781ff]/40 shadow-sm transition-all text-xs sm:text-sm font-semibold shrink-0"
             title="Open Roman Urdu AI Guide Robot"
           >
             <Bot className="w-4 h-4 text-[#8781ff] animate-bounce" />
@@ -132,17 +132,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             onClick={onStartProject}
-            className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 rounded-xl bg-[#8781ff] hover:bg-[#c4c0ff] text-[#1c0091] font-bold text-xs sm:text-sm transition-all shadow-[0_0_20px_rgba(112,103,255,0.35)] hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-5 py-2 rounded-xl bg-[#8781ff] hover:bg-[#c4c0ff] text-[#1c0091] font-bold text-xs sm:text-sm transition-all shadow-[0_0_20px_rgba(112,103,255,0.35)] active:scale-[0.98] shrink-0"
           >
             <Rocket className="w-4 h-4" />
-            <span>Start a Project</span>
+            <span className="hidden sm:inline">Start a Project</span><span className="sm:hidden">Start</span>
           </button>
 
           {/* Mobile hamburger */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden w-9 h-9 rounded-lg bg-[#1e1f25] text-[#e2e2e9] flex items-center justify-center"
+            className="xl:hidden w-9 h-9 rounded-lg bg-[#1e1f25] text-[#e2e2e9] flex items-center justify-center shrink-0"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

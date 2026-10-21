@@ -559,11 +559,25 @@ function handleAdminLogin(payload) {
   var passwordSalt = props.getProperty('ADMIN_PASSWORD_SALT') || 'sk_salt_default';
 
   if (email !== adminEmail) {
-    recordFailedAttempt();
+    var emailFailedCount = recordFailedAttempt();
+    var emailAttemptsLeft = AUTH_CONSTANTS.MAX_FAILED_ATTEMPTS - emailFailedCount;
+    if (emailAttemptsLeft <= 0) {
+      return {
+        success: false,
+        data: null,
+        error: {
+          code: 'ACCOUNT_LOCKED',
+          message: '3 failed login attempts recorded. Access is locked for 24 hours.'
+        }
+      };
+    }
     return {
       success: false,
       data: null,
-      error: { code: 'INVALID_CREDENTIALS', message: 'Invalid credentials provided.' }
+      error: {
+        code: 'INVALID_EMAIL',
+        message: 'This email does not match the SK DEV TEAM administrator account. Check the email address and try again. Attempts remaining: ' + emailAttemptsLeft
+      }
     };
   }
 
@@ -599,8 +613,8 @@ function handleAdminLogin(payload) {
       success: false,
       data: null,
       error: {
-        code: 'INVALID_CREDENTIALS',
-        message: 'Invalid credentials. Remaining attempts before 24-hour lockout: ' + attemptsLeft
+        code: 'INVALID_PASSWORD',
+        message: 'The password is incorrect. Check your password and try again. Attempts remaining before 24-hour lockout: ' + attemptsLeft
       }
     };
   }

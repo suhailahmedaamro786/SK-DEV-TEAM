@@ -405,6 +405,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
               <div className="space-y-1">
                 <input
                   type="email"
+                  autoComplete="username"
                   required
                   value={adminEmail}
                   onChange={(e) => setAdminEmail(e.target.value)}
@@ -416,6 +417,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
               <div className="space-y-1">
                 <input
                   type="password"
+                  autoComplete="current-password"
                   required
                   value={adminPassword}
                   onChange={(e) => setAdminPassword(e.target.value)}

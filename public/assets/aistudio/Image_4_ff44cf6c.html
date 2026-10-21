@@ -1,0 +1,958 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#110068","on-background":"#e2e2e9","on-primary-fixed-variant":"#3725c7","on-error-container":"#ffdad6","primary-container":"#8781ff","tertiary":"#c4c7c9","on-tertiary-container":"#272a2c","on-tertiary-fixed-variant":"#444749","inverse-primary":"#5145df","secondary":"#44dfab","on-error":"#690005","surface-tint":"#c4c0ff","on-surface-variant":"#c7c4d8","surface":"#111318","on-secondary-fixed-variant":"#00513a","surface-container-highest":"#33353a","surface-container":"#1e1f25","on-tertiary-fixed":"#191c1e","on-primary":"#2100a4","surface-bright":"#37393f","outline":"#918fa1","tertiary-container":"#8e9193","on-surface":"#e2e2e9","on-primary-container":"#1c0091","primary-fixed":"#e3dfff","secondary-fixed-dim":"#44dfab","on-secondary-fixed":"#002115","primary":"#c4c0ff","inverse-on-surface":"#2e3036","inverse-surface":"#e2e2e9","primary-fixed-dim":"#c4c0ff","surface-container-lowest":"#0c0e13","secondary-container":"#00bf8e","tertiary-fixed-dim":"#c4c7c9","error":"#ffb4ab","surface-container-low":"#1a1b21","on-secondary-container":"#004732","on-secondary":"#003827","surface-variant":"#33353a","background":"#111318","on-tertiary":"#2d3133","error-container":"#93000a","surface-container-high":"#282a2f","tertiary-fixed":"#e0e3e5","outline-variant":"#464555","surface-dim":"#111318","secondary-fixed":"#67fcc6"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-sm":"0.5rem","space-md":"1rem","margin":"3rem","space-xl":"2.5rem","space-xs":"0.25rem","space-lg":"1.5rem","gutter-mobile":"1rem","margin-mobile":"1.25rem","gutter":"1.5rem"},fontFamily:{"body-sm":["Inter"],"label-sm":["Inter"],"display-mobile":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"display":["Inter"],"title-md":["Inter"],"body-md":["Inter"],"headline-lg":["Inter"],"label-md":["Inter"],"headline-sm":["Inter"],"headline-lg-mobile":["Inter"]},fontSize:{"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.05em","fontWeight":"600"}],"display-mobile":["2.5rem",{"lineHeight":"3rem","letterSpacing":"-0.025em","fontWeight":"700"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-md":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}],"display":["4rem",{"lineHeight":"4.5rem","letterSpacing":"-0.03em","fontWeight":"700"}],"title-md":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["2.5rem",{"lineHeight":"3rem","letterSpacing":"-0.025em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.04em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg-mobile":["1.875rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-shrink-0"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="SK DEV TEAM Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMYDg81xMe5R1aOyYzQ3MgOVVzfLCjMNk7Oi0tcNqrGfethHqdRJaRGydbTVjdAfvxEC6egtxKcuuWPdhTTdVfB4fG0q22XxS4MnAiS1EsqcvOaldk1Q5hKNlLc6f9Ht0RjU7k7sXmGiQvf1E-9uqSC0Uz4Afx-aPAyeYeKRnVIK8BLVoCXDQUTBH1IijS2AFHQml_El22RPrc6kCptGuQ-gwF8dPca2XPMJ4fnd5gqVwNQEjtaFcE"><div class="flex flex-col"><span class="font-title-md text-title-md font-bold tracking-tight text-on-surface leading-none">SK DEV TEAM</span><span class="font-label-sm text-label-sm text-on-surface-variant hidden lg:inline-block leading-tight">Digital Solutions for Growing Businesses</span></div></a></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-title-md rounded-lg"><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-container-high text-primary font-title-md rounded-lg" data-path="home" href="#">Home</a><a class="px-space-sm py-space-xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="projects" href="#">Projects</a><a class="px-space-sm py-space-xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="services" href="#">Services</a><a class="px-space-sm py-space-xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="technologies" href="#">Technologies</a><a class="px-space-sm py-space-xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="about" href="#">About</a><a class="px-space-sm py-space-xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><button aria-label="Toggle Color Theme" class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><a class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary hover:text-secondary-fixed transition-colors font-body-sm text-body-sm font-medium" href="https://wa.me/923153558383" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span class="">WhatsApp</span></a><a class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="admin-portal" href="#"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span><span class="">Admin</span></a><a class="inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-primary hover:bg-primary-fixed-dim text-on-primary font-title-md text-title-md transition-all shadow-[0_0_20px_rgba(112,103,255,0.35)] hover:scale-[1.02] active:scale-[0.98]" data-path="start-project" href="#">Start a Project</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full relative overflow-hidden">
+<!-- Glow Scrim Orbs -->
+<div class="absolute top-12 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="absolute top-96 right-10 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+<!-- HERO SECTION -->
+<section class="relative w-full px-gutter py-space-xl lg:py-28 flex flex-col justify-center">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left Column: Copy & Executive Actions -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Status Indicator Pill -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Accepting Q2/Q3 Enterprise Projects</span>
+</div>
+<!-- Primary Heading -->
+<div class="flex flex-col gap-space-xs">
+<h1 class="font-display text-display text-on-surface leading-none tracking-tight">
+            Building Digital Experiences for 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-surface-tint to-secondary">
+              Ambitious Businesses.
+            </span>
+</h1>
+</div>
+<!-- Supporting Paragraph -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          SK DEV TEAM engineers high-performance websites, dynamic e-commerce platforms, mission-critical management systems, robust admin dashboards, and bespoke AI agents engineered to accelerate scalable revenue.
+        </p>
+<!-- CTA Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-primary text-on-primary font-title-md text-title-md transition-all duration-200 hover:bg-primary-fixed-dim hover:scale-[1.02] shadow-[0_0_24px_rgba(112,103,255,0.35)] active:scale-[0.98]" href="#inquiry">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+<span class="">Start a Project</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-all duration-200 shadow-sm hover:scale-[1.02]" href="#projects">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+<span class="">Explore Our Projects</span>
+</a>
+</div>
+<!-- Fast Contact Direct Links -->
+<div class="flex flex-wrap items-center gap-space-lg pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<a class="inline-flex items-center gap-space-xs hover:text-primary transition-colors" href="mailto:suhailahmedaamro786@gmail.com">
+<span class="material-symbols-outlined text-primary text-[18px]">alternate_email</span>
+<span class="">suhailahmedaamro786@gmail.com</span>
+</a>
+<a class="inline-flex items-center gap-space-xs hover:text-secondary transition-colors" href="https://wa.me/923153558383" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-secondary text-[18px]">chat</span>
+<span class="">Direct WhatsApp: +92 315 3558383</span>
+</a>
+</div>
+<!-- Micro Telemetry Row -->
+<div class="grid grid-cols-3 gap-space-md pt-space-sm max-w-lg">
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Delivery Success</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">99.9%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Guaranteed SLA</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container-low shadow-sm">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">24/7</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live AI Support</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Mascot & Telemetry Cards -->
+<div class="lg:col-span-5 relative flex justify-center items-center">
+<!-- Radial Ambient Backdrop -->
+<div class="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-primary-container/30 to-secondary-container/20 blur-3xl pointer-events-none"></div>
+<!-- Robot Mascot Frame -->
+<div class="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden bg-surface-container-low shadow-2xl flex items-center justify-center p-space-sm">
+<img alt="SK DEV TEAM AI Mascot Assistant" class="w-full h-full object-cover rounded-xl transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKYcY3DnyZ1LBqZKfn2XRSkhozk7tk4nbX8ckd9ujfdi2i_6tZjc1HLhGN5LvTm6xhk4fFRbe2LlvB-_fku7ItaFyV264fwwqBG7K_2mHGOm6KR1XBK7cgEv6d79P7lA3F4bH1vfTUwuleOMe3Ips7-pz5mIUW3k28b2qLMizijJUDti5fKGPiD2SwoMwd4ec63Z5iiaqT-hKEz9I93v2c4yrB3VwCcJbcYdfjKdI4RZJ8XHjEnmUO">
+<!-- Floating Badge 1: Top Right Tech Node -->
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-space-md py-space-xs rounded-xl shadow-lg flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">FastAPI &amp; Next.js</span>
+</div>
+<!-- Floating Badge 2: Mid Left High Uptime -->
+<div class="absolute bottom-16 -left-2 bg-surface/90 backdrop-blur-md px-space-md py-space-xs rounded-xl shadow-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">99.9% Uptime SLA</span>
+</div>
+<!-- Floating Badge 3: Bottom Right AI Automation -->
+<div class="absolute -bottom-2 right-4 bg-surface-container-high/95 backdrop-blur-md px-space-md py-space-xs rounded-xl shadow-xl flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">smart_toy</span>
+<span class="font-label-md text-label-md text-primary font-semibold">AI Automation Live</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE AI ROBOT ASSISTANT SECTION / WIDGET EMBED -->
+<section class="w-full px-gutter py-space-lg bg-surface-container-low/70">
+<div class="max-w-7xl mx-auto rounded-2xl bg-surface-container p-space-lg lg:p-space-xl shadow-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Assistant Avatar & Status Info -->
+<div class="lg:col-span-4 flex items-center gap-space-md">
+<div class="relative w-20 h-20 rounded-2xl overflow-hidden bg-surface-container-highest shadow-md flex-shrink-0">
+<img alt="AI Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKYcY3DnyZ1LBqZKfn2XRSkhozk7tk4nbX8ckd9ujfdi2i_6tZjc1HLhGN5LvTm6xhk4fFRbe2LlvB-_fku7ItaFyV264fwwqBG7K_2mHGOm6KR1XBK7cgEv6d79P7lA3F4bH1vfTUwuleOMe3Ips7-pz5mIUW3k28b2qLMizijJUDti5fKGPiD2SwoMwd4ec63Z5iiaqT-hKEz9I93v2c4yrB3VwCcJbcYdfjKdI4RZJ8XHjEnmUO">
+<div class="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-secondary ring-2 ring-surface animate-ping" id="ai-pulse-beacon"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface font-bold">SK Core Voice AI</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-secondary/20 text-secondary">Interactive</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate" id="ai-status-text">Ready to introduce our engineering team &amp; stack.</p>
+</div>
+</div>
+<!-- Assistant Interactive Control Center -->
+<div class="lg:col-span-8 flex flex-wrap items-center justify-start lg:justify-end gap-space-sm">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-secondary text-on-secondary font-title-md text-title-md hover:bg-secondary-fixed transition-all shadow-md active:scale-95" id="btn-ai-speak" type="button">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+<span id="btn-ai-speak-label" class="">Start Introduction</span>
+</button>
+<button class="hidden inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-error-container text-on-error-container font-title-md text-title-md hover:opacity-90 transition-all shadow-md active:scale-95" id="btn-ai-stop" type="button">
+<span class="material-symbols-outlined text-[20px]">stop_circle</span>
+<span class="">Stop Speaking</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-title-md text-title-md hover:bg-surface-bright transition-all shadow-sm" id="btn-ai-modal" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="">Open Transcript</span>
+</button>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:text-primary transition-all" href="#services">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span class="">View Services</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:text-primary transition-all" href="#projects">
+<span class="material-symbols-outlined text-[16px]">folder_special</span>
+<span class="">Explore Projects</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-body-sm text-body-sm font-semibold hover:bg-primary hover:text-on-primary transition-all" href="#inquiry">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span class="">Start a Project</span>
+</a>
+</div>
+</div>
+<!-- Transcript Box / Safe Fallback Notice Area -->
+<div class="mt-space-md pt-space-md border-t-0 bg-surface-container-lowest/80 p-space-md rounded-xl hidden" id="ai-transcript-box">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">smart_toy</span>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-secondary font-bold">Mascot Transcript Preview</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed" id="ai-transcript-content">
+                "Welcome to SK DEV TEAM. I am your automated engineering companion. We build mission-critical web applications, high-converting e-commerce shops, education platforms, and real-time custom AI automation. Click 'Start a Project' to consult with our lead engineers today."
+              </p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" id="btn-close-transcript" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED PROJECTS GRID / PORTFOLIO SHOWCASE -->
+<section class="w-full px-gutter py-space-xl lg:py-28" id="projects">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Demonstrated Proof of Work</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Engineered Platforms in Production</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Live web systems with verified uptime, modern architecture, and performance-first execution.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            6 Active Client Deployments
+          </span>
+</div>
+</div>
+<!-- Bento-style Project Grid (6 Projects) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- PROJECT 1: SK DEV TEAM Portfolio -->
+<div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-48 bg-surface-container-highest overflow-hidden p-space-md flex flex-col justify-between">
+<!-- Project Tag Bar -->
+<div class="flex items-center justify-between z-10">
+<span class="px-space-xs py-0.5 rounded bg-surface/80 font-label-sm text-label-sm text-primary">Flagship Showcase</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[20px]">public</span>
+</div>
+<!-- Interactive Visual Preview Block -->
+<div class="flex items-center justify-center my-auto">
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">SK DEV TEAM</span>
+<span class="font-label-sm text-label-sm text-secondary">Official Developer Brand</span>
+</div>
+</div>
+<div class="flex gap-space-xs flex-wrap z-10">
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Next.js</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Tailwind CSS</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Vercel</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">SK DEV TEAM Portfolio</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                The high-performance official headquarters featuring dynamic portfolio navigation, contact workflows, and modular UI engineering.
+              </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" href="https://suhailahmedaamro.vercel.app/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span class="">Live Demo</span>
+</a>
+<button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" onclick="prefillInquiry('SK DEV TEAM Portfolio Showcase')" type="button">
+<span class="material-symbols-outlined text-[16px]">copy_all</span>
+<span class="">Build Similar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PROJECT 2: D-Pizza -->
+<div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-48 bg-surface-container-highest overflow-hidden p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between z-10">
+<span class="px-space-xs py-0.5 rounded bg-surface/80 font-label-sm text-label-sm text-secondary">E-Commerce &amp; Ordering</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors text-[20px]">local_pizza</span>
+</div>
+<div class="flex items-center justify-center my-auto">
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">D-Pizza Storefront</span>
+<span class="font-label-sm text-label-sm text-secondary">Cart, Checkout &amp; Stripe</span>
+</div>
+</div>
+<div class="flex gap-space-xs flex-wrap z-10">
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">React</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Node.js</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Stripe</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">D-Pizza Online Shop</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Comprehensive digital restaurant storefront with real-time menu customization, frictionless Stripe checkout, and automated delivery order dispatch.
+              </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" href="https://www.d-pizza.shop/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span class="">Live Demo</span>
+</a>
+<button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" onclick="prefillInquiry('D-Pizza Online Ordering System')" type="button">
+<span class="material-symbols-outlined text-[16px]">copy_all</span>
+<span class="">Build Similar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PROJECT 3: Education Hub -->
+<div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-48 bg-surface-container-highest overflow-hidden p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between z-10">
+<span class="px-space-xs py-0.5 rounded bg-surface/80 font-label-sm text-label-sm text-primary">LMS &amp; School Portal</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[20px]">school</span>
+</div>
+<div class="flex items-center justify-center my-auto">
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Education Hub</span>
+<span class="font-label-sm text-label-sm text-primary">Multi-Role Management</span>
+</div>
+</div>
+<div class="flex gap-space-xs flex-wrap z-10">
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Next.js</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">PostgreSQL</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Tailwind</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Education Hub (LMS)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Comprehensive academic governance engine with role-based dashboards for administrators, faculty, and students, grading books, and syllabus distribution.
+              </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" href="https://education-hub-dusky.vercel.app/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span class="">Live Demo</span>
+</a>
+<button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" onclick="prefillInquiry('Education Hub LMS System')" type="button">
+<span class="material-symbols-outlined text-[16px]">copy_all</span>
+<span class="">Build Similar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PROJECT 4: DCCID Corporate Portal -->
+<div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-48 bg-surface-container-highest overflow-hidden p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between z-10">
+<span class="px-space-xs py-0.5 rounded bg-surface/80 font-label-sm text-label-sm text-on-surface">Institutional</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors text-[20px]">account_balance</span>
+</div>
+<div class="flex items-center justify-center my-auto">
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">DCCID Portal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Secure Institutional Hub</span>
+</div>
+</div>
+<div class="flex gap-space-xs flex-wrap z-10">
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Enterprise Next.js</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Cloudflare</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">DCCID Institutional Platform</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Secure organizational website featuring institutional directories, document archives, encrypted inquiries, and multi-tier public resources.
+              </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" href="https://dccid-79522kcag-aamrosk519-3847s-projects.vercel.app/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span class="">Live Demo</span>
+</a>
+<button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" onclick="prefillInquiry('DCCID Institutional Portal')" type="button">
+<span class="material-symbols-outlined text-[16px]">copy_all</span>
+<span class="">Build Similar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PROJECT 5: AI Appointment Booking Agent -->
+<div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-48 bg-surface-container-highest overflow-hidden p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between z-10">
+<span class="px-space-xs py-0.5 rounded bg-surface/80 font-label-sm text-label-sm text-secondary">GenAI &amp; Automation</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">smart_toy</span>
+</div>
+<div class="flex items-center justify-center my-auto">
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">AI Voice &amp; Chat Agent</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Automated Scheduler</span>
+</div>
+</div>
+<div class="flex gap-space-xs flex-wrap z-10">
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">FastAPI</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">OpenAI</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Webhooks</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">AI Appointment Booking Agent</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Autonomous conversational AI that conducts qualification interviews, syncs with Google/Outlook calendar slots, and delivers verified bookings.
+              </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" href="https://ai-appointment-booking-agent-omega.vercel.app/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span class="">Live Demo</span>
+</a>
+<button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" onclick="prefillInquiry('AI Appointment Booking Agent')" type="button">
+<span class="material-symbols-outlined text-[16px]">copy_all</span>
+<span class="">Build Similar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PROJECT 6: SK Builder -->
+<div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+<div class="relative w-full h-48 bg-surface-container-highest overflow-hidden p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between z-10">
+<span class="px-space-xs py-0.5 rounded bg-surface/80 font-label-sm text-label-sm text-primary">Industrial &amp; Architecture</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-[20px]">apartment</span>
+</div>
+<div class="flex items-center justify-center my-auto">
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">SK Builder</span>
+<span class="font-label-sm text-label-sm text-primary">Civil Engineering Platform</span>
+</div>
+</div>
+<div class="flex gap-space-xs flex-wrap z-10">
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Next.js</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Modern CSS</span>
+<span class="font-label-sm text-label-sm px-space-xs rounded bg-surface-container text-on-surface-variant">Vercel</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">SK Builder Platform</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                Modern corporate hub for construction, architectural estimators, real estate project showcases, and digital blueprint inquiry flows.
+              </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" href="https://sk-conding.vercel.app/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span class="">Live Demo</span>
+</a>
+<button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" onclick="prefillInquiry('SK Builder Engineering Platform')" type="button">
+<span class="material-symbols-outlined text-[16px]">copy_all</span>
+<span class="">Build Similar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="w-full px-gutter py-space-xl lg:py-28 bg-surface-container-lowest/80 relative" id="client-testimonials"><div class="max-w-7xl mx-auto flex flex-col gap-space-xl"><div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md"><div class="flex flex-col gap-space-xs"><div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit shadow-sm"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">VERIFIED CLIENT FEEDBACK &amp; FOUNDER INTERVIEWS</span></div><h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Hear Directly from Our Engineering Partners</h2><p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Founders, CTOs, and product leaders share their experience shipping mission-critical platforms with SK DEV TEAM.</p></div><div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container border-0 shadow-sm"><div class="flex text-secondary"><span class="material-symbols-outlined text-[18px]">star</span><span class="material-symbols-outlined text-[18px]">star</span><span class="material-symbols-outlined text-[18px]">star</span><span class="material-symbols-outlined text-[18px]">star</span><span class="material-symbols-outlined text-[18px]">star</span></div><span class="font-label-md text-label-md text-on-surface font-semibold">5.0 / 5.0 Average Client Rating across 18+ commercial releases</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg"><div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"><div class="relative w-full h-56 bg-gradient-to-tr from-surface-container-lowest via-surface-container-high to-surface-container flex flex-col justify-between p-space-md overflow-hidden"><div class="absolute -top-12 -left-12 w-48 h-48 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div><div class="flex items-center justify-between z-10"><span class="px-space-xs py-0.5 rounded bg-surface/80 backdrop-blur-md font-label-sm text-label-sm text-secondary">E-Commerce / FoodTech</span><span class="px-space-xs py-0.5 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px]">videocam</span>01:42 HD</span></div><div class="my-auto flex items-center justify-center z-10"><button aria-label="Play Testimonial from Marco Castiglione" class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-[0_0_24px_rgba(33,201,151,0.4)] hover:scale-105 active:scale-95 transition-all group-hover:bg-secondary-fixed" onclick="openTestimonialModal('Marco Castiglione', 'D-Pizza Storefront', 'SK DEV TEAM delivered our custom ordering platform in 12 days. Instant checkout reduced cart dropouts by 34%.', '+34% Conversions · &lt;350ms Checkout', '01:42 HD')" type="button"><span class="material-symbols-outlined text-[28px]">play_arrow</span></button></div><div class="flex items-center justify-between z-10 font-label-sm text-label-sm text-on-surface-variant"><span class="">Recorded Q1 Production Sprint</span><span class="text-secondary font-medium flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span>Verified Client</span></div></div><div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md"><div><div class="flex items-center gap-space-sm mb-space-xs"><div class="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold font-title-md text-title-md">MC</div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface">Marco Castiglione</span><span class="font-label-sm text-label-sm text-on-surface-variant">Founder &amp; CEO, D-Pizza</span></div></div><p class="font-body-sm text-body-sm text-on-surface leading-relaxed italic">“SK DEV TEAM delivered our custom ordering platform in 12 days. Instant checkout reduced cart dropouts by 34%.”</p></div><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-secondary font-label-md text-label-md font-semibold flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">trending_up</span><span class="">+34% Conversions · &lt;350ms Checkout</span></div><div class="flex items-center gap-space-xs pt-space-xs"><button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" onclick="openTestimonialModal('Marco Castiglione', 'D-Pizza Storefront', 'SK DEV TEAM delivered our custom ordering platform in 12 days. Instant checkout reduced cart dropouts by 34%.', '+34% Conversions · &lt;350ms Checkout', '01:42 HD')" type="button"><span class="material-symbols-outlined text-[16px]">subtitles</span><span class="">Watch &amp; Transcript</span></button><a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" href="https://wa.me/923153558383?text=Hi%20SK%20DEV%20TEAM,%20I%20saw%20Marco's%20review%20and%20want%20to%20inquire%20about%20a%20similar%20ordering%20platform" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span><span class="">Inquire Build</span></a></div></div></div></div><div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"><div class="relative w-full h-56 bg-gradient-to-tr from-surface-container-lowest via-surface-container-high to-surface-container flex flex-col justify-between p-space-md overflow-hidden"><div class="absolute -top-12 -left-12 w-48 h-48 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div><div class="flex items-center justify-between z-10"><span class="px-space-xs py-0.5 rounded bg-surface/80 backdrop-blur-md font-label-sm text-label-sm text-primary">AI &amp; Voice Automation</span><span class="px-space-xs py-0.5 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px]">videocam</span>02:15 HD</span></div><div class="my-auto flex items-center justify-center z-10"><button aria-label="Play Testimonial from Dr. Elena Rostova" class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_0_24px_rgba(112,103,255,0.4)] hover:scale-105 active:scale-95 transition-all group-hover:bg-primary-fixed-dim" onclick="openTestimonialModal('Dr. Elena Rostova', 'AI Appointment Booking Agent', 'The conversational AI appointment bot manages 450+ inquiries weekly with zero missed bookings and full calendar sync.', '450+ Auto-Bookings / Week · 99.98% Uptime', '02:15 HD')" type="button"><span class="material-symbols-outlined text-[28px]">play_arrow</span></button></div><div class="flex items-center justify-between z-10 font-label-sm text-label-sm text-on-surface-variant"><span class="">Recorded Q2 AI Production Rollout</span><span class="text-primary font-medium flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary"></span>Verified Client</span></div></div><div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md"><div><div class="flex items-center gap-space-sm mb-space-xs"><div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold font-title-md text-title-md">ER</div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface">Dr. Elena Rostova</span><span class="font-label-sm text-label-sm text-on-surface-variant">VP of Operations, HealthTech Solutions</span></div></div><p class="font-body-sm text-body-sm text-on-surface leading-relaxed italic">“The conversational AI appointment bot manages 450+ inquiries weekly with zero missed bookings and full calendar sync.”</p></div><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-primary font-label-md text-label-md font-semibold flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">smart_toy</span><span class="">450+ Auto-Bookings / Week · 99.98% Uptime</span></div><div class="flex items-center gap-space-xs pt-space-xs"><button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" onclick="openTestimonialModal('Dr. Elena Rostova', 'AI Appointment Booking Agent', 'The conversational AI appointment bot manages 450+ inquiries weekly with zero missed bookings and full calendar sync.', '450+ Auto-Bookings / Week · 99.98% Uptime', '02:15 HD')" type="button"><span class="material-symbols-outlined text-[16px]">subtitles</span><span class="">Watch &amp; Transcript</span></button><a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" href="https://wa.me/923153558383?text=Hi%20SK%20DEV%20TEAM,%20I%20saw%20Dr.%20Elena's%20review%20and%20want%20to%20build%20an%20AI%20booking%20agent" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span><span class="">Inquire Build</span></a></div></div></div></div><div class="flex flex-col rounded-2xl bg-surface-container overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"><div class="relative w-full h-56 bg-gradient-to-tr from-surface-container-lowest via-surface-container-high to-surface-container flex flex-col justify-between p-space-md overflow-hidden"><div class="absolute -top-12 -left-12 w-48 h-48 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div><div class="flex items-center justify-between z-10"><span class="px-space-xs py-0.5 rounded bg-surface/80 backdrop-blur-md font-label-sm text-label-sm text-secondary">Institutional Web3 / Cloud</span><span class="px-space-xs py-0.5 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px]">videocam</span>01:58 HD</span></div><div class="my-auto flex items-center justify-center z-10"><button aria-label="Play Testimonial from Farhan Akhtar" class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-[0_0_24px_rgba(33,201,151,0.4)] hover:scale-105 active:scale-95 transition-all group-hover:bg-secondary-fixed" onclick="openTestimonialModal('Farhan Akhtar', 'DCCID Institutional Platform', 'Flawless execution on our high-traffic directory and secure archive. The team\u2019s communication over WhatsApp was daily and proactive.', '100% On-Time Delivery · Zero Security Exploits', '01:58 HD')" type="button"><span class="material-symbols-outlined text-[28px]">play_arrow</span></button></div><div class="flex items-center justify-between z-10 font-label-sm text-label-sm text-on-surface-variant"><span class="">Recorded Q3 Enterprise Deployment</span><span class="text-secondary font-medium flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span>Verified Client</span></div></div><div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md"><div><div class="flex items-center gap-space-sm mb-space-xs"><div class="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold font-title-md text-title-md">FA</div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold text-on-surface">Farhan Akhtar</span><span class="font-label-sm text-label-sm text-on-surface-variant">Technical Director, DCCID Org</span></div></div><p class="font-body-sm text-body-sm text-on-surface leading-relaxed italic">“Flawless execution on our high-traffic directory and secure archive. The team's communication over WhatsApp was daily and proactive.”</p></div><div class="flex flex-col gap-space-xs"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-secondary font-label-md text-label-md font-semibold flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">verified</span><span class="">100% On-Time Delivery · Zero Security Exploits</span></div><div class="flex items-center gap-space-xs pt-space-xs"><button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" onclick="openTestimonialModal('Farhan Akhtar', 'DCCID Institutional Platform', 'Flawless execution on our high-traffic directory and secure archive. The team\u2019s communication over WhatsApp was daily and proactive.', '100% On-Time Delivery · Zero Security Exploits', '01:58 HD')" type="button"><span class="material-symbols-outlined text-[16px]">subtitles</span><span class="">Watch &amp; Transcript</span></button><a class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-primary-container/30 hover:bg-primary-container text-on-surface hover:text-on-primary-container font-body-sm text-body-sm transition-colors" href="https://wa.me/923153558383?text=Hi%20SK%20DEV%20TEAM,%20I%20saw%20Farhan's%20review%20and%20want%20to%20build%20an%20institutional%20portal" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span><span class="">Inquire Build</span></a></div></div></div></div></div><div class="hidden fixed inset-0 z-50 bg-surface/90 backdrop-blur-xl flex items-center justify-center p-space-md" id="testimonial-modal"><div class="max-w-2xl w-full rounded-3xl bg-surface-container p-space-lg lg:p-space-xl shadow-2xl flex flex-col gap-space-md border-0 relative"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-md text-label-md uppercase tracking-wider text-secondary" id="modal-project-badge">Verified Client Interview</span></div><button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-surface-bright flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeTestimonialModal()" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="relative w-full h-48 rounded-xl bg-surface-container-lowest flex items-center justify-center overflow-hidden"><div class="flex flex-col items-center gap-space-xs text-center px-space-md"><div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary mb-space-xs"><span class="material-symbols-outlined text-[28px]">play_circle</span></div><span class="font-title-md text-title-md text-on-surface font-bold" id="modal-founder-title">Client Testimonial Video Stream</span><span class="font-label-sm text-label-sm text-on-surface-variant" id="modal-duration-tag">01:42 HD Video Stream Ready</span></div></div><div class="flex flex-col gap-space-xs bg-surface-container-low p-space-md rounded-xl"><span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Executive Verbatim Transcript</span><p class="font-body-md text-body-md text-on-surface leading-relaxed italic" id="modal-transcript-text">“”</p></div><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high"><div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md font-semibold"><span class="material-symbols-outlined text-[16px]">verified</span><span id="modal-metric-badge" class="">Verified Metrics</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Lead Developer: Suhail Ahmed</span></div><div class="flex flex-wrap items-center justify-end gap-space-sm pt-space-xs"><button class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" onclick="closeTestimonialModal()" type="button">Close Preview</button><a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-lg bg-secondary text-on-secondary font-title-md text-title-md font-bold hover:bg-secondary-fixed transition-all shadow-md" href="https://wa.me/923153558383" id="modal-whatsapp-link" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span class="">Inquire About Similar Build</span></a></div></div></div></div><script>window.openTestimonialModal = function(founder, project, quote, metrics, duration) { const m = document.getElementById('testimonial-modal'); if (!m) return; document.getElementById('modal-founder-title').textContent = founder + ' — ' + project; document.getElementById('modal-project-badge').textContent = project; document.getElementById('modal-transcript-text').textContent = '"' + quote + '"'; document.getElementById('modal-metric-badge').textContent = metrics; document.getElementById('modal-duration-tag').textContent = duration + ' • Verified Client Recording'; document.getElementById('modal-whatsapp-link').href = 'https://wa.me/923153558383?text=' + encodeURIComponent('Hi SK DEV TEAM, I watched the testimonial from ' + founder + ' on ' + project + ' and would like to build a similar project.'); m.classList.remove('hidden'); }; window.closeTestimonialModal = function() { const m = document.getElementById('testimonial-modal'); if (m) m.classList.add('hidden'); };</script></section>
+<!-- SERVICES SECTION: 8 HIGH-IMPACT CARDS -->
+<section class="w-full px-gutter py-space-xl lg:py-28 bg-surface-container-low" id="services">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<div class="flex flex-col max-w-2xl gap-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary">Specialized Capabilities</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Comprehensive Digital Engineering</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          End-to-end design, implementation, and infrastructure support tailored for measurable ROI and business automation.
+        </p>
+</div>
+<!-- 8 Services Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Service 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">devices</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Business Website Development</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Ultra-fast, responsive brand websites engineered for conversions, search engine visibility, and effortless content updates.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-primary hover:text-primary-fixed transition-colors" onclick="prefillService('Business Website Development')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">E-Commerce &amp; Online Ordering</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Secure digital catalogs, instant food ordering engines, Stripe payment gateway pipelines, and streamlined order logistics.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-secondary hover:text-secondary-fixed transition-colors" onclick="prefillService('E-Commerce &amp; Online Ordering')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 3 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">School &amp; Education Systems</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Full-featured Learning Management Systems, student registries, attendance trackers, fee collection, and parent-teacher portals.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-primary hover:text-primary-fixed transition-colors" onclick="prefillService('School &amp; Education Systems')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 4 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">dashboard_customize</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Admin Dashboards &amp; Internal Tools</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Operational command consoles, inventory oversight, business analytics visualizers, and role-based staff telemetry views.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-secondary hover:text-secondary-fixed transition-colors" onclick="prefillService('Admin Dashboards &amp; Internal Tools')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 5 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">code_blocks</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Custom Web Applications</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Tailored software architectures built from the ground up for unique workflows, SaaS business models, and complex data engines.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-primary hover:text-primary-fixed transition-colors" onclick="prefillService('Custom Web Applications')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 6 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">smart_toy</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">AI Assistants &amp; Automation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Autonomous customer agents, semantic search tools, automated lead qualification, and LLM-driven internal operational workflows.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-secondary hover:text-secondary-fixed transition-colors" onclick="prefillService('AI Assistants &amp; Automation')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 7 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Appointment Booking Systems</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Frictionless scheduling systems for clinics, consultants, and salons with calendar sync, SMS alerts, and deposit collection.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-primary hover:text-primary-fixed transition-colors" onclick="prefillService('Appointment Booking Systems')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Service 8 -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-md hover:scale-[1.01] transition-transform">
+<div class="flex flex-col gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Maintenance &amp; Speed Optimization</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Proactive uptime monitoring, security audits, database indexing, Core Web Vitals optimization, and ongoing feature iterations.
+            </p>
+</div>
+<button class="mt-space-md inline-flex items-center gap-space-xs font-title-md text-title-md text-secondary hover:text-secondary-fixed transition-colors" onclick="prefillService('Maintenance &amp; Improvements')" type="button">
+<span class="">Discuss Capability</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- TECHNOLOGIES SECTION: CATEGORIZED BADGES -->
+<section class="w-full px-gutter py-space-xl lg:py-28" id="technologies">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Battle-Tested Modern Stack</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Disciplined Technical Ecosystem</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          We do not chase transient hype. We build on resilient, industry-standard languages, enterprise frameworks, and battle-tested databases.
+        </p>
+</div>
+<!-- Categories Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Category 1: Programming Languages -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">code</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Programming Languages</span>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">JavaScript (ES6+)</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">TypeScript</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Python 3.12</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">HTML5 Semantic</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">CSS3 Modern</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">SQL Standard</span>
+</div>
+</div>
+<!-- Category 2: Frontend Engineering -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">web</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Frontend Architecture</span>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">React 19</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Next.js (App Router)</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Vite Ecosystem</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Tailwind CSS v3/4</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Framer Motion</span>
+</div>
+</div>
+<!-- Category 3: Backend & APIs -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">dns</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Backend &amp; APIs</span>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Node.js Enterprise</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">FastAPI Asynchronous</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">RESTful Architecture</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">GraphQL Protocols</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Stripe Payments API</span>
+</div>
+</div>
+<!-- Category 4: Databases & Storage -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">database</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Databases &amp; State</span>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">PostgreSQL</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Supabase Realtime</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Neon Serverless SQL</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Firebase Cloud</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Redis Cache</span>
+</div>
+</div>
+<!-- Category 5: AI & Automation -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">neurology</span>
+<span class="font-headline-sm text-headline-sm font-semibold">AI &amp; Automation</span>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Generative AI LLMs</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Autonomous AI Agents</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">RAG Pipelines</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">MCP (Model Context Protocol)</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">OpenAI &amp; Anthropic SDKs</span>
+</div>
+</div>
+<!-- Category 6: Developer Tools & Infrastructure -->
+<div class="p-space-lg rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">cloud_sync</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Deployment &amp; Cloud</span>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Git &amp; GitHub Actions</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Vercel Edge Network</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Cloudflare DNS &amp; Workers</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">Docker Containerization</span>
+<span class="px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm">CI/CD Automated Testing</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CLIENT PROJECT INQUIRY FORM SECTION -->
+<section class="w-full px-gutter py-space-xl lg:py-28 bg-surface-container-low/50" id="inquiry">
+<div class="max-w-4xl mx-auto flex flex-col gap-space-xl">
+<!-- Section Title & Narrative -->
+<div class="flex flex-col text-center items-center gap-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Transparent Discovery &amp; Execution</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Start Your Engineering Engagement</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+          Submit your requirements directly to our executive engineering inbox or launch an immediate WhatsApp conversation.
+        </p>
+</div>
+<!-- High-Conversion Multi-Field Inquiry Card -->
+<div class="rounded-3xl bg-surface-container p-space-lg lg:p-space-xl shadow-2xl relative">
+<form class="flex flex-col gap-space-lg" id="project-inquiry-form" onsubmit="handleInquirySubmit(event)">
+<!-- Row 1: Name and Business -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="client-name">Full Name *</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="client-name" placeholder="e.g. Alex Henderson" required="" type="text">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="client-business">Business or Organization Name</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="client-business" placeholder="e.g. Nexus Global Ltd." type="text">
+</div>
+</div>
+<!-- Row 2: Email and WhatsApp Phone -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="client-email">Email Address *</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="client-email" placeholder="alex@nexusglobal.com" required="" type="email">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="client-phone">WhatsApp / Phone Number *</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="client-phone" placeholder="+1 555 123 4567 or +92 315 3558383" required="" type="tel">
+</div>
+</div>
+<!-- Row 3: Preferred Contact Method & Project Type -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="contact-method">Preferred Contact Channel</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="contact-method">
+<option value="WhatsApp">Direct WhatsApp (+92 315 3558383)</option>
+<option value="Email">Email Communication</option>
+<option value="Phone Call">Direct Phone Call</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="project-type">Primary Project Type *</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="project-type" required="">
+<option value="Business Website Development">Business Website Development</option>
+<option value="E-commerce Websites and Online Ordering">E-commerce &amp; Food Ordering System</option>
+<option value="School Management and Education Systems">School Management &amp; LMS</option>
+<option value="Admin Dashboards and Business Applications">Admin Dashboards &amp; Internal Tools</option>
+<option value="Custom Web Applications">Custom Enterprise Web Application</option>
+<option value="AI Assistants and Automation">AI Assistants &amp; Voice/Chat Automation</option>
+<option value="Appointment Booking Systems">Appointment Booking Platform</option>
+<option value="Website Maintenance and Improvements">Maintenance &amp; Performance Tuning</option>
+</select>
+</div>
+</div>
+<!-- Row 4: Referenced Existing Demo Selection & Reference URL -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="demo-reference">Reference an Existing Live Demo (Optional)</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="demo-reference">
+<option value="None">None / Custom Concept</option>
+<option value="SK DEV TEAM Portfolio (https://suhailahmedaamro.vercel.app/)">SK DEV TEAM Portfolio</option>
+<option value="D-Pizza (https://www.d-pizza.shop/)">D-Pizza Food Ordering System</option>
+<option value="Education Hub (https://education-hub-dusky.vercel.app/)">Education Hub LMS</option>
+<option value="DCCID Institutional Portal">DCCID Institutional Portal</option>
+<option value="AI Appointment Booking Agent">AI Appointment Booking Agent</option>
+<option value="SK Builder Platform">SK Builder Construction Platform</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="reference-url">Inspiration or Reference URL</label>
+<input class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="reference-url" placeholder="https://yourcompetitor.com or figma link" type="url">
+</div>
+</div>
+<!-- Row 5: Budget Range and Timeline -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="budget-range">Estimated Budget Range</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="budget-range">
+<option value="$300 - $800">$300 – $800 (Starter / Sprint MVP)</option>
+<option value="$800 - $2,500">$800 – $2,500 (Production Commercial Application)</option>
+<option value="$2,500 - $5,000+">$2,500 – $5,000+ (Full Enterprise Solution / Custom AI)</option>
+<option value="To be discussed">Flexible / Consultation First</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="preferred-timeline">Preferred Deployment Target</label>
+<select class="h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="preferred-timeline">
+<option value="Urgent (1-2 Weeks)">Express Speed (1–2 Weeks)</option>
+<option value="Standard (3-4 Weeks)">Standard Delivery (3–4 Weeks)</option>
+<option value="Q3 Roadmap (1-2 Months)">Comprehensive Scope (1–2 Months)</option>
+</select>
+</div>
+</div>
+<!-- Row 6: Project Requirements -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="project-requirements">Project Objectives &amp; Requirements *</label>
+<textarea class="p-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="project-requirements" placeholder="Briefly outline what you need: target audience, specific features, integrations (e.g., Stripe, database, AI agent), and timeline goals..." required="" rows="4"></textarea>
+</div>
+<!-- Submit Buttons Cluster -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md pt-space-xs">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-lg bg-primary text-on-primary font-title-md text-title-md font-bold transition-all hover:bg-primary-fixed-dim shadow-[0_0_24px_rgba(112,103,255,0.4)] active:scale-95" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span class="">Submit Project Inquiry</span>
+</button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-bright text-secondary font-title-md text-title-md transition-all shadow-sm" onclick="submitViaWhatsApp()" type="button">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span class="">Send directly via WhatsApp</span>
+</button>
+</div>
+</form>
+<!-- Dynamic Success Confirmation Banner -->
+<div class="hidden mt-space-lg p-space-md rounded-xl bg-secondary-container/20 text-on-surface flex items-start gap-space-sm" id="form-success-alert">
+<span class="material-symbols-outlined text-secondary text-[24px]">task_alt</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-secondary">Inquiry Dispatched Successfully!</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Thank you for reaching out to SK DEV TEAM. Suhail Ahmed and our lead architect have received your specification and will reply within 4 hours. You can also message +92 315 3558383 on WhatsApp for instant confirmation.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Global Voice Synthesis state and safe fallbacks
+  let isSpeaking = false;
+  let speechInstance = null;
+
+  const introText = "Greetings. I am the AI companion for SK DEV TEAM. We engineer high-performance web applications, responsive e-commerce portals, school management architectures, and custom AI systems for ambitious global businesses. Feel free to explore our live demos, or click 'Start a Project' to consult with our lead engineer, Suhail Ahmed.";
+
+  const btnSpeak = document.getElementById('btn-ai-speak');
+  const btnSpeakLabel = document.getElementById('btn-ai-speak-label');
+  const btnStop = document.getElementById('btn-ai-stop');
+  const btnModal = document.getElementById('btn-ai-modal');
+  const transcriptBox = document.getElementById('ai-transcript-box');
+  const btnCloseTranscript = document.getElementById('btn-close-transcript');
+  const aiStatusText = document.getElementById('ai-status-text');
+
+  if (btnSpeak) {
+    btnSpeak.addEventListener('click', () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        
+        speechInstance = new SpeechSynthesisUtterance(introText);
+        speechInstance.rate = 1.0;
+        speechInstance.pitch = 1.05;
+
+        // Try picking an articulate English voice if present
+        const voices = window.speechSynthesis.getVoices();
+        const preferredVoice = voices.find(v => v.lang.includes('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')));
+        if (preferredVoice) {
+          speechInstance.voice = preferredVoice;
+        }
+
+        speechInstance.onstart = () => {
+          isSpeaking = true;
+          if (btnSpeakLabel) btnSpeakLabel.textContent = "Replay Introduction";
+          if (btnStop) btnStop.classList.remove('hidden');
+          if (aiStatusText) aiStatusText.textContent = "Voice Assistant Speaking...";
+        };
+
+        speechInstance.onend = () => {
+          isSpeaking = false;
+          if (btnStop) btnStop.classList.add('hidden');
+          if (aiStatusText) aiStatusText.textContent = "Voice playback completed.";
+        };
+
+        speechInstance.onerror = () => {
+          isSpeaking = false;
+          if (btnStop) btnStop.classList.add('hidden');
+          if (aiStatusText) aiStatusText.textContent = "Voice unavailable in this browser session.";
+          // Show fallback transcript modal
+          if (transcriptBox) transcriptBox.classList.remove('hidden');
+        };
+
+        window.speechSynthesis.speak(speechInstance);
+      } else {
+        // Fallback for browsers with no Web Speech API
+        if (transcriptBox) transcriptBox.classList.remove('hidden');
+        if (aiStatusText) aiStatusText.textContent = "Speech synthesis not supported. Read transcript below.";
+      }
+    });
+  }
+
+  if (btnStop) {
+    btnStop.addEventListener('click', () => {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      isSpeaking = false;
+      btnStop.classList.add('hidden');
+      if (aiStatusText) aiStatusText.textContent = "Speech stopped.";
+    });
+  }
+
+  if (btnModal) {
+    btnModal.addEventListener('click', () => {
+      if (transcriptBox) {
+        transcriptBox.classList.toggle('hidden');
+      }
+    });
+  }
+
+  if (btnCloseTranscript) {
+    btnCloseTranscript.addEventListener('click', () => {
+      if (transcriptBox) {
+        transcriptBox.classList.add('hidden');
+      }
+    });
+  }
+
+  // Pre-fill Helper from Project Cards
+  window.prefillInquiry = function(projectName) {
+    const demoSelect = document.getElementById('demo-reference');
+    const reqBox = document.getElementById('project-requirements');
+    const inquirySection = document.getElementById('inquiry');
+
+    if (demoSelect) {
+      for (let i = 0; i < demoSelect.options.length; i++) {
+        if (demoSelect.options[i].text.toLowerCase().includes(projectName.toLowerCase())) {
+          demoSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    if (reqBox && !reqBox.value) {
+      reqBox.value = `We are interested in engineering a scalable platform similar to ${projectName}. Our objective is: `;
+    }
+
+    if (inquirySection) {
+      inquirySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Pre-fill Helper from Service Cards
+  window.prefillService = function(serviceName) {
+    const projectTypeSelect = document.getElementById('project-type');
+    const inquirySection = document.getElementById('inquiry');
+
+    if (projectTypeSelect) {
+      for (let i = 0; i < projectTypeSelect.options.length; i++) {
+        if (projectTypeSelect.options[i].value.toLowerCase().includes(serviceName.toLowerCase())) {
+          projectTypeSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    if (inquirySection) {
+      inquirySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Form Submission Handler
+  window.handleInquirySubmit = function(e) {
+    e.preventDefault();
+    const alertBox = document.getElementById('form-success-alert');
+    const form = document.getElementById('project-inquiry-form');
+
+    if (alertBox) {
+      alertBox.classList.remove('hidden');
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    if (form) {
+      form.reset();
+    }
+  };
+
+  // Direct WhatsApp Forwarder
+  window.submitViaWhatsApp = function() {
+    const name = document.getElementById('client-name')?.value || 'Client';
+    const business = document.getElementById('client-business')?.value || 'Business';
+    const type = document.getElementById('project-type')?.value || 'General Web Project';
+    const budget = document.getElementById('budget-range')?.value || 'Flexible';
+    const req = document.getElementById('project-requirements')?.value || 'Project consultation';
+
+    const message = `Hello SK DEV TEAM! My name is ${name} from ${business}. I am interested in ${type}. Budget: ${budget}. Overview: ${req}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/923153558383?text=${encoded}`, '_blank');
+  };
+</script></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.04)]"><div class="w-full px-gutter py-space-xl flex flex-col gap-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="SK DEV TEAM Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMYDg81xMe5R1aOyYzQ3MgOVVzfLCjMNk7Oi0tcNqrGfethHqdRJaRGydbTVjdAfvxEC6egtxKcuuWPdhTTdVfB4fG0q22XxS4MnAiS1EsqcvOaldk1Q5hKNlLc6f9Ht0RjU7k7sXmGiQvf1E-9uqSC0Uz4Afx-aPAyeYeKRnVIK8BLVoCXDQUTBH1IijS2AFHQml_El22RPrc6kCptGuQ-gwF8dPca2XPMJ4fnd5gqVwNQEjtaFcE"><span class="font-title-md text-title-md font-bold text-on-surface">SK DEV TEAM</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">High-conviction digital craftsmanship, enterprise engineering, and scalable architectural precision for fast-growing global brands.</p><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary font-medium">Available for new client deployments</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-on-surface">Agency Navigation</span><nav class="flex flex-col gap-space-xs" data-active-classes="text-primary font-bold"><a aria-current="page" class="transition-colors text-primary font-bold" data-path="home" href="#">Home</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#">Case Studies &amp; Projects</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#">Engineering Services</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="technologies" href="#">Technology Stack</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About the Team</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Contact Inquiries</a></nav></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-on-surface">Executive Contact</span><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-primary transition-colors flex items-center gap-space-xs" href="mailto:suhailahmedaamro786@gmail.com"><span class="material-symbols-outlined text-[16px]">mail</span>suhailahmedaamro786@gmail.com</a><a class="hover:text-primary transition-colors flex items-center gap-space-xs" href="tel:+923093305243"><span class="material-symbols-outlined text-[16px]">call</span>+92 309 3305243</a><a class="hover:text-primary transition-colors flex items-center gap-space-xs" href="tel:+923153558383"><span class="material-symbols-outlined text-[16px]">call</span>+92 315 3558383</a><a class="hover:text-secondary transition-colors flex items-center gap-space-xs" href="https://wa.me/923153558383" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span>WhatsApp Hotline</a></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-on-surface">Internal Systems</span><p class="font-body-sm text-body-sm text-on-surface-variant">Authorized personnel and client workspace management.</p><div class="flex flex-col gap-space-xs"><a class="inline-flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-portal" href="#"><span class="material-symbols-outlined text-[16px]">lock</span>Client &amp; Admin Portal</a><a class="inline-flex items-center gap-space-xs font-body-sm text-body-sm text-secondary hover:text-secondary-fixed transition-colors" data-path="start-project" href="#"><span class="material-symbols-outlined text-[16px]">rocket_launch</span>Initiate Discovery Project</a></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><span class="">©</span><span id="shell-copyright-year" class="">2026</span><span class="">SK DEV TEAM. All rights reserved.</span></div><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Privacy &amp; Terms</a><a aria-label="Scroll to top" class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-all" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><span class="material-symbols-outlined text-[20px]">arrow_upward</span></a></div></div></div></footer><script>(function(){var el=document.getElementById('shell-copyright-year');if(el){el.textContent=new Date().getFullYear();}})();</script>
+
+</body></html>

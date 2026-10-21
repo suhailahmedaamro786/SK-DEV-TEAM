@@ -70,7 +70,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           <div className="flex items-center gap-2">
             <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-[#1e1f25] border border-[#33353a] text-[#44dfab] flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#44dfab] animate-pulse" />
-              6 Active Verified Client Deployments
+              {PROJECTS_DATA.length} Portfolio Projects
             </span>
           </div>
         </div>
@@ -80,7 +80,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
             
             {/* Search Input */}
-            <div className="relative flex-1 min-w-[260px]">
+            <div className="relative flex-1 min-w-0 w-full">
               <Search className="w-4 h-4 text-[#918fa1] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"

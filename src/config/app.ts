@@ -49,9 +49,9 @@ export const APP_CONFIG: AppConfig = {
     spreadsheetId: '1rorxnzJRJ9ij2D5TSrkFCWveEhlf4GCMifr0VlQ4w0c',
     defaultScriptUrl: 'https://script.google.com/macros/s/AKfycbycik6AGSjEkbKW85dTPdMZRSYBVUFvTzC9f-mhLDqujxEQA3J8xu6j8-HF5JDk4Sw/exec',
     // Allow overriding via environment variable VITE_APPS_SCRIPT_URL if configured
-    scriptUrl: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_APPS_SCRIPT_URL)
-      ? import.meta.env.VITE_APPS_SCRIPT_URL
-      : 'https://script.google.com/macros/s/AKfycbycik6AGSjEkbKW85dTPdMZRSYBVUFvTzC9f-mhLDqujxEQA3J8xu6j8-HF5JDk4Sw/exec',
+    scriptUrl: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL)
+      ? import.meta.env.VITE_API_BASE_URL
+      : '/api/backend',
   },
   limits: {
     maxOtpAttempts: 3,

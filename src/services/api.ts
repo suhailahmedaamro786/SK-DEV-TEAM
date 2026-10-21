@@ -53,10 +53,66 @@ class ApiService {
 
       const text = await response.text();
 
-      // Check if response is valid JSON
+      // Check if response is valid JSON and normalize the Apps Script
+      // response into the ApiResponse envelope expected by the frontend.
+      // Auth.gs currently returns { success, challengeId/token/message }
+      // rather than { success, data, error }.
       try {
         const json = JSON.parse(text);
-        return json;
+
+        if (action === 'checkSession' && json?.success && json?.session) {
+          return {
+            success: true,
+            data: {
+              valid: true,
+              user: json.session,
+              expiresAt: json.session.expiresAt,
+            },
+            error: null,
+          } as ApiResponse<T>;
+        }
+
+        if (typeof json?.success === 'boolean') {
+          if ('data' in json || 'error' in json) {
+            return json as ApiResponse<T>;
+          }
+
+          if (json.success) {
+            const { success: _success, ...data } = json;
+            return {
+              success: true,
+              data: data as T,
+              error: null,
+            };
+          }
+
+          const message = String(
+            json.message || 'The server rejected the request.'
+          );
+          return {
+            success: false,
+            data: null,
+            error: {
+              code: /invalid email or password/i.test(message)
+                ? 'INVALID_CREDENTIALS'
+                : /not initialized|setup incomplete/i.test(message)
+                  ? 'AUTH_SETUP_REQUIRED'
+                  : /otp/i.test(message)
+                    ? 'OTP_ERROR'
+                    : 'BACKEND_ERROR',
+              message,
+            },
+          };
+        }
+
+        return {
+          success: false,
+          data: null,
+          error: {
+            code: 'INVALID_API_RESPONSE',
+            message: 'The server response did not contain a success status.',
+          },
+        };
       } catch (jsonErr) {
         // If the script returned HTML (e.g., Google login prompt or Drive error page due to deployment permissions)
         if (text.includes('accounts.google.com') || text.includes('drive-logo') || text.includes('Unable to open') || text.includes('Page not found')) {

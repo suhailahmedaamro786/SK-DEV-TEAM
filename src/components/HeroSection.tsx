@@ -81,11 +81,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute top-96 right-10 w-[600px] h-[600px] bg-[#44dfab]/10 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       {/* HERO SECTION */}
-      <section className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 flex flex-col justify-center">
+      <section className="relative w-full max-w-[1440px] mx-auto px-3 min-[375px]:px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Copy & Actions */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
+          <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-6 min-w-0">
             
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1e1f25] w-fit border border-[#33353a] shadow-sm">
@@ -96,7 +96,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Primary Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#e2e2e9] leading-[1.1]">
+            <h1 className="text-3xl min-[375px]:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#e2e2e9] leading-[1.1] break-words">
               Building Digital Experiences for{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c4c0ff] via-[#8781ff] to-[#44dfab]">
                 Ambitious Businesses.
@@ -109,11 +109,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
 
             {/* CTA Cluster */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-1">
+            <div className="flex flex-col min-[480px]:flex-row flex-wrap items-stretch min-[480px]:items-center gap-2.5 sm:gap-3.5 pt-1">
               <button
                 type="button"
                 onClick={onStartProject}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#8781ff] text-[#1c0091] font-bold text-sm sm:text-base transition-all duration-200 hover:bg-[#c4c0ff] hover:scale-[1.02] shadow-[0_0_24px_rgba(112,103,255,0.35)] active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-xl bg-[#8781ff] text-[#1c0091] font-bold text-sm sm:text-base transition-all duration-200 hover:bg-[#c4c0ff] hover:scale-[1.02] shadow-[0_0_24px_rgba(112,103,255,0.35)] active:scale-[0.98]"
               >
                 <Rocket className="w-4 h-4" />
                 <span>Start a Project</span>
@@ -122,7 +122,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <button
                 type="button"
                 onClick={onExploreProjects}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1e1f25] hover:bg-[#282a2f] text-[#e2e2e9] font-semibold text-sm sm:text-base transition-all duration-200 border border-[#33353a] hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-xl bg-[#1e1f25] hover:bg-[#282a2f] text-[#e2e2e9] font-semibold text-sm sm:text-base transition-all duration-200 border border-[#33353a] hover:scale-[1.02]"
               >
                 <Grid className="w-4 h-4 text-[#8781ff]" />
                 <span>Explore Our Projects</span>
@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Direct Contact Links */}
-            <div className="flex flex-wrap items-center gap-5 pt-1 text-xs sm:text-sm text-[#918fa1]">
+            <div className="flex flex-col min-[480px]:flex-row flex-wrap items-start gap-3 sm:gap-5 pt-1 text-xs sm:text-sm text-[#918fa1] min-w-0">
               <a
                 href="mailto:suhailahmedaamro786@gmail.com"
                 className="inline-flex items-center gap-1.5 hover:text-[#c4c0ff] transition-colors"
@@ -150,10 +150,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Telemetry Row */}
-            <div className="grid grid-cols-3 gap-3 pt-2 max-w-lg">
-              <div className="flex flex-col p-3 rounded-xl bg-[#1a1b21] border border-[#33353a]/60">
+            <div className="grid grid-cols-1 min-[360px]:grid-cols-3 gap-2 sm:gap-3 pt-2 w-full max-w-lg">
+              <div className="flex flex-row min-[360px]:flex-col items-center min-[360px]:items-start justify-between min-[360px]:justify-start gap-2 min-w-0 p-3 rounded-xl bg-[#1a1b21] border border-[#33353a]/60">
                 <span className="text-xl sm:text-2xl font-bold text-[#e2e2e9] font-mono">100%</span>
-                <span className="text-[11px] text-[#918fa1] mt-0.5">Delivery Success</span>
+                <span className="text-[11px] text-[#918fa1] mt-0.5 text-right min-[360px]:text-left">Delivery Success</span>
               </div>
               <div className="flex flex-col p-3 rounded-xl bg-[#1a1b21] border border-[#33353a]/60">
                 <span className="text-xl sm:text-2xl font-bold text-[#44dfab] font-mono">99.9%</span>
@@ -173,7 +173,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-[#8781ff]/20 to-[#44dfab]/15 blur-3xl pointer-events-none" />
 
             {/* Mascot Frame */}
-            <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden bg-[#1a1b21] border-2 border-[#33353a] shadow-2xl flex items-center justify-center p-3 group">
+            <div className="relative w-full max-w-[min(100%,28rem)] aspect-square rounded-3xl overflow-hidden bg-[#1a1b21] border-2 border-[#33353a] shadow-2xl flex items-center justify-center p-3 group">
               <img
                 src={MASCOT_IMG}
                 alt="SK DEV TEAM AI Robot Mascot"
@@ -190,13 +190,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
 
               {/* Floating Badge 2: Mid Left */}
-              <div className="absolute bottom-16 -left-1 bg-[#111318]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#33353a] shadow-lg flex items-center gap-1.5">
+              <div className="absolute bottom-16 left-2 sm:-left-1 bg-[#111318]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-[#33353a] shadow-lg flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#44dfab]" />
                 <span className="text-xs font-semibold text-[#e2e2e9]">99.9% Uptime SLA</span>
               </div>
 
               {/* Floating Badge 3: Bottom Right */}
-              <div className="absolute -bottom-1 right-5 bg-[#1e1f25]/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#8781ff]/40 shadow-xl flex items-center gap-2">
+              <div className="absolute bottom-2 right-2 sm:-bottom-1 sm:right-5 bg-[#1e1f25]/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#8781ff]/40 shadow-xl flex items-center gap-2">
                 <Bot className="w-4 h-4 text-[#8781ff]" />
                 <span className="text-xs font-bold text-[#c4c0ff]">AI Automation Live</span>
               </div>

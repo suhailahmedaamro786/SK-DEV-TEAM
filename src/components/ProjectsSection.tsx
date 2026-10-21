@@ -79,7 +79,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         <div className="p-4 sm:p-5 rounded-2xl bg-[#1e1f25] border border-[#33353a] flex flex-col gap-4 shadow-md">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
             
-            {/* Search Input */}
+            {/* Search Input: keep the field flexible so it can shrink with the mobile viewport. */}
             <div className="relative flex-1 min-w-0 w-full">
               <Search className="w-4 h-4 text-[#918fa1] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
@@ -122,7 +122,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             </div>
           </div>
 
-          {/* Category Tabs */}
+          {/* Category Tabs: allow horizontal scrolling for category chips instead of forcing the page wider. */}
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
             {categories.map((cat) => (
               <button

@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="fixed top-0 left-0 right-0 z-40 bg-[#111318]/85 backdrop-blur-xl border-b border-[#33353a]/50">
       <div className="h-16 sm:h-20 w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-6">
         
-        {/* Brand Zone */}
+        {/* Brand Zone: shrink the logo and keep the brand label on one line on narrow screens. */}
         <div className="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
           <button
             type="button"
@@ -103,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </nav>
 
-        {/* Right Action Cluster */}
+        {/* Right Action Cluster: hide secondary actions on phones so the primary CTA and menu remain visible. */}
         <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
           {/* AI Robot Quick Button */}
           <button
@@ -150,7 +150,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown: show the full navigation only after the hamburger is opened. */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-[#1a1b21] border-b border-[#33353a] px-4 py-4 space-y-2">
           <button

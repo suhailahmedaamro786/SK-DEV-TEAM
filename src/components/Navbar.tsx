@@ -25,15 +25,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-3 text-left focus:outline-none group"
+            className="flex items-center gap-2 sm:gap-3 text-left focus:outline-none group min-w-0"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#8781ff] to-[#44dfab] p-[1px] flex items-center justify-center shadow-md">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#8781ff] to-[#44dfab] p-[1px] flex items-center justify-center shadow-md">
               <div className="w-full h-full bg-[#111318] rounded-[11px] flex items-center justify-center font-bold text-[#c4c0ff] text-base group-hover:text-white transition-colors">
                 SK
               </div>
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-extrabold text-base sm:text-lg tracking-tight text-[#e2e2e9] leading-none">
+              <span className="font-extrabold text-sm min-[375px]:text-base sm:text-lg tracking-tight text-[#e2e2e9] leading-none whitespace-nowrap">
                 SK DEV TEAM
               </span>
               <span className="text-[11px] text-[#918fa1] hidden sm:inline-block leading-tight mt-0.5">
@@ -109,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             type="button"
             onClick={onOpenRobot}
-            className="flex items-center justify-center gap-1.5 px-2 sm:px-3 py-2 rounded-xl bg-[#1e1f25] hover:bg-[#282a2f] text-[#c4c0ff] border border-[#8781ff]/40 shadow-sm transition-all text-xs sm:text-sm font-semibold shrink-0"
+            className="hidden sm:flex items-center justify-center gap-1.5 px-2 sm:px-3 py-2 rounded-xl bg-[#1e1f25] hover:bg-[#282a2f] text-[#c4c0ff] border border-[#8781ff]/40 shadow-sm transition-all text-xs sm:text-sm font-semibold shrink-0"
             title="Open Roman Urdu AI Guide Robot"
           >
             <Bot className="w-4 h-4 text-[#8781ff] animate-bounce" />
@@ -135,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-5 py-2 rounded-xl bg-[#8781ff] hover:bg-[#c4c0ff] text-[#1c0091] font-bold text-xs sm:text-sm transition-all shadow-[0_0_20px_rgba(112,103,255,0.35)] active:scale-[0.98] shrink-0"
           >
             <Rocket className="w-4 h-4" />
-            <span className="hidden sm:inline">Start a Project</span><span className="sm:hidden">Start</span>
+            <span className="hidden sm:inline">Start a Project</span>
           </button>
 
           {/* Mobile hamburger */}

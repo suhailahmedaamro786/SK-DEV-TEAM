@@ -1,4 +1,3 @@
-
 /**
  * SK DEV TEAM — Google Sheets Workspace Setup
  * Uses your existing spreadsheet.

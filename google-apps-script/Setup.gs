@@ -1,4 +1,3 @@
-
 /**
  * SK DEV TEAM — Workspace Verification
  * Uses the existing Google Spreadsheet.

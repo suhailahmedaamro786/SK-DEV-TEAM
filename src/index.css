@@ -72,3 +72,34 @@ html[data-theme="light"] .theme-toggle {
 ::-webkit-scrollbar-thumb:hover { background: #37393f; }
 html[data-theme="light"] ::-webkit-scrollbar-track { background: #f5f7fb; }
 html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #c6cede; }
+
+/* Mobile safeguards: constrain content, wrap long labels, and keep forms usable on small screens. */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { width: 100%; max-width: 100%; overflow-x: clip; scroll-padding-top: 5.5rem; }
+  body { width: 100%; max-width: 100%; min-width: 320px; overflow-x: clip; }
+  img, video, canvas, svg { max-width: 100%; }
+  input, textarea, select, button { max-width: 100%; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  h1, h2, h3, h4, p, a, button, label, span { overflow-wrap: anywhere; }
+  input, textarea, select { min-width: 0; }
+}
+/* Small phones: reserve room for the fixed navbar and collapse custom card grids. */
+@media (max-width: 420px) {
+  main { padding-top: 4.5rem !important; }
+  section[id] { scroll-margin-top: 5.5rem; }
+  .responsive-card-grid { grid-template-columns: minmax(0, 1fr) !important; }
+}
+/* Keep floating controls inset and let wide tables scroll inside their own wrapper. */
+@media (max-width: 640px) {
+  .max-w-\\[1440px\\] { max-width: 100%; }
+  .fixed.bottom-6.left-6 { left: 0.75rem; bottom: 0.75rem; }
+  .fixed.bottom-6.right-6 { right: 0.75rem; bottom: 0.75rem; }
+  input, textarea, select { font-size: 16px; }
+  table { min-width: 36rem; }
+  .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+}
+/* Respect reduced-motion preferences for users who disable animation. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

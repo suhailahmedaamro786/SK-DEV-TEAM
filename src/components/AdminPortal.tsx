@@ -381,27 +381,6 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
             <h1 className="text-2xl font-extrabold text-[#e2e2e9]">
               SK DEV TEAM Admin Login
             </h1>
-            <p className="text-xs text-[#918fa1]">
-              Private Operations Console · Server-Validated 2FA
-            </p>
-          </div>
-
-          {/* Backend Connection Indicator */}
-          <div className="p-3 rounded-xl bg-[#14151a] border border-[#33353a] flex items-center justify-between text-xs">
-            <span className="text-[#918fa1]">Google Apps Script:</span>
-            {backendStatus === 'connected' ? (
-              <span className="text-[#44dfab] font-semibold flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-[#44dfab]" />
-                Connected
-              </span>
-            ) : backendStatus === 'checking' ? (
-              <span className="text-[#c4c0ff]">Checking endpoint...</span>
-            ) : (
-              <span className="text-[#ffb4ab] font-medium flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-[#ffb4ab]" />
-                Web App Active
-              </span>
-            )}
           </div>
 
           {authError && (
@@ -424,53 +403,41 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
           {authStep === 'credentials' ? (
             <form onSubmit={handleCredentialSubmit} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-[#918fa1]">Administrator Email</label>
                 <input
                   type="email"
                   required
                   value={adminEmail}
                   onChange={(e) => setAdminEmail(e.target.value)}
-                  placeholder="suhailahmedaamro786@gmail.com"
+                  placeholder="Enter your email"
                   className="w-full h-11 px-3.5 rounded-xl bg-[#0c0e13] text-[#e2e2e9] text-xs sm:text-sm border border-[#33353a] focus:outline-none focus:border-[#8781ff]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-semibold text-[#918fa1]">Master Password</label>
                 <input
                   type="password"
                   required
                   value={adminPassword}
                   onChange={(e) => setAdminPassword(e.target.value)}
-                  placeholder="Enter administrator password"
+                  placeholder="Enter your password"
                   className="w-full h-11 px-3.5 rounded-xl bg-[#0c0e13] text-[#e2e2e9] text-xs sm:text-sm border border-[#33353a] focus:outline-none focus:border-[#8781ff]"
                 />
               </div>
 
               <button
                 type="submit"
-                disabled={authLoading || lockoutActive || !adminPassword}
+                disabled={authLoading || lockoutActive || !adminEmail.trim() || !adminPassword}
                 className="w-full h-11 rounded-xl bg-[#8781ff] hover:bg-[#c4c0ff] disabled:opacity-40 text-[#1c0091] font-bold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2"
               >
                 {authLoading ? (
-                  <span>Verifying on Server...</span>
+                  <span>Signing In...</span>
                 ) : (
                   <>
-                    <KeyRound className="w-4 h-4" />
-                    <span>Sign In & Request OTP</span>
+                    <span>Sign In</span>
                   </>
                 )}
               </button>
 
-              <div className="text-center pt-2">
-                <button
-                  type="button"
-                  onClick={onBackToSite}
-                  className="text-xs text-[#918fa1] hover:text-[#e2e2e9] transition-colors"
-                >
-                  ← Return to Public Website
-                </button>
-              </div>
             </form>
           ) : (
             /* SCREEN 2: 6-Digit Email OTP Challenge */

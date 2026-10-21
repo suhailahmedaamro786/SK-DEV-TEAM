@@ -186,5 +186,49 @@ export const PROJECTS_DATA: ProjectItem[] = [
       duration: '01:45 HD',
       initials: 'BS'
     }
+  },
+  {
+    id: 'noble-public-school-dadu',
+    title: 'Noble Public School Dadu',
+    category: 'Education & LMS',
+    badgeCat: 'School Website',
+    bannerImg: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80',
+    liveUrl: 'https://npsd.vercel.app/',
+    client: 'Noble Public School Dadu',
+    sla: 'Live Demo',
+    latency: 'Open website',
+    desc: 'A school-focused web experience for presenting school information and helping families find key details in a clear, accessible layout.',
+    deliverables: [
+      'School information presented in a clear page structure',
+      'Responsive browsing experience across desktop and mobile',
+      'Easy-to-follow navigation for families and visitors',
+      'Direct link to the live school website'
+    ],
+    stack: ['School Website', 'Responsive UI', 'Education'],
+    date: '2026-10',
+    order: 7,
+    tags: ['Education', 'School Website', 'Responsive Design', 'Noble Public School', 'Dadu']
+  },
+  {
+    id: 'noble-dadu-school-hub',
+    title: 'Noble Dadu School Hub',
+    category: 'Education & LMS',
+    badgeCat: 'School Hub',
+    bannerImg: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
+    liveUrl: 'https://noble-dadu-school-hub.lovable.app/',
+    client: 'Noble Dadu School Hub',
+    sla: 'Live Demo',
+    latency: 'Open website',
+    desc: 'A dedicated school-hub experience designed to make school-related information easier to explore through a focused, education-oriented interface.',
+    deliverables: [
+      'Dedicated school hub landing experience',
+      'Clear information hierarchy and navigation',
+      'Responsive layout for common screen sizes',
+      'Direct link to the live school hub'
+    ],
+    stack: ['School Hub', 'Responsive UI', 'Education'],
+    date: '2026-10',
+    order: 8,
+    tags: ['Education', 'School Hub', 'Responsive Design', 'Dadu', 'Noble School']
   }
 ];

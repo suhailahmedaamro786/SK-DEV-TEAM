@@ -373,7 +373,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
       <div className="w-full min-h-screen bg-[#111318] text-[#e2e2e9] flex flex-col justify-center items-center p-4">
         <div className="max-w-md w-full p-8 rounded-3xl bg-[#1e1f25] border border-[#33353a] shadow-2xl space-y-6">
           
-          {/* Header */}
+          {/* Header: allow dashboard title and actions to wrap into a vertical layout on small screens. */}
           <div className="text-center space-y-2">
             <div className="w-12 h-12 rounded-2xl bg-[#282a2f] text-[#8781ff] flex items-center justify-center mx-auto shadow-md">
               <Lock className="w-6 h-6" />
@@ -571,7 +571,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
           )}
         </div>
         
-        {/* Navigation Tabs */}
+        {/* Navigation Tabs: keep all admin sections reachable with horizontal tab scrolling on mobile. */}
         <div className="flex items-center gap-2 border-b border-[#33353a] pb-4 overflow-x-auto whitespace-nowrap">
           <button
             type="button"

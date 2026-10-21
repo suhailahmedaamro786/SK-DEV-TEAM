@@ -80,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute top-12 left-1/4 w-[500px] h-[500px] bg-[#8781ff]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-96 right-10 w-[600px] h-[600px] bg-[#44dfab]/10 rounded-full blur-[160px] pointer-events-none -z-10" />
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION: use smaller mobile spacing so the headline and main actions appear without excessive scrolling. */}
       <section className="relative w-full max-w-[1440px] mx-auto px-3 min-[375px]:px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-24 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </span>
             </div>
 
-            {/* Primary Heading */}
+            {/* Primary Heading: responsive text sizes prevent the headline from dominating narrow screens. */}
             <h1 className="text-3xl min-[375px]:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#e2e2e9] leading-[1.1] break-words">
               Building Digital Experiences for{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c4c0ff] via-[#8781ff] to-[#44dfab]">
@@ -108,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               SK DEV TEAM engineers high-performance websites, dynamic e-commerce platforms, mission-critical management systems, robust admin dashboards, and bespoke AI agents engineered to accelerate scalable revenue.
             </p>
 
-            {/* CTA Cluster */}
+            {/* CTA Cluster: stack buttons on very narrow screens; place them side-by-side when there is room. */}
             <div className="flex flex-col min-[480px]:flex-row flex-wrap items-stretch min-[480px]:items-center gap-2.5 sm:gap-3.5 pt-1">
               <button
                 type="button"
@@ -129,7 +129,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </button>
             </div>
 
-            {/* Direct Contact Links */}
+            {/* Direct Contact Links: stack email and WhatsApp links on phones to avoid horizontal overflow. */}
             <div className="flex flex-col min-[480px]:flex-row flex-wrap items-start gap-3 sm:gap-5 pt-1 text-xs sm:text-sm text-[#918fa1] min-w-0">
               <a
                 href="mailto:suhailahmedaamro786@gmail.com"

@@ -26,7 +26,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onBackToSite }) => {
 
   // Login Form states
   const [authStep, setAuthStep] = useState<'credentials' | 'otp'>('credentials');
-  const [adminEmail, setAdminEmail] = useState('suhailahmedaamro786@gmail.com');
+  const [adminEmail, setAdminEmail] = useState('');
   const [adminPassword, setAdminPassword] = useState('');
   const [otpValue, setOtpValue] = useState('');
   const [challengeId, setChallengeId] = useState('');

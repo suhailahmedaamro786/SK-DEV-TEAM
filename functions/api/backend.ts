@@ -1,6 +1,6 @@
 const UPSTREAM = "https://script.google.com/macros/s/AKfycbycik6AGSjEkbKW85dTPdMZRSYBVUFvTzC9f-mhLDqujxEQA3J8xu6j8-HF5JDk4Sw/exec";
 
-export const onRequest: PagesFunction = async ({ request }) => {
+export const onRequest = async ({ request }: { request: Request }) => {
   const incoming = new URL(request.url);
   const target = new URL(UPSTREAM);
   incoming.searchParams.forEach((value, key) => target.searchParams.set(key, value));

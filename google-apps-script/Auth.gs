@@ -1,378 +1,488 @@
+
 /**
- * SK DEV TEAM — Authentication & Security Subsystem (Auth.gs)
- * 
- * Enforces:
- *  - Two-Factor Multi-step authentication (Master Password + Email OTP)
- *  - 24-Hour Lockout after 3 consecutive failed credential attempts
- *  - Cryptographically secure 6-digit Email OTP delivered via MailApp
- *  - 10-Minute OTP expiration & 3-attempt limit per OTP challenge
- *  - Short-lived cryptographically signed session tokens
- *  - Zero sensitive data exposure in audit logs (no passwords/raw OTPs)
+ * SK DEV TEAM — Basic Admin Authentication API
+ * Google Apps Script
+ *
+ * Script Properties required:
+ * SKDEV_ADMIN_EMAIL
+ * SKDEV_INITIAL_PASSWORD (one-time setup only)
+ *
+ * Actions:
+ * GET  ?action=health
+ * POST login, verifyOtp, checkSession, logout
+ *
+ * Never put passwords, OTPs, or secrets in frontend code.
  */
 
-var AUTH_CONSTANTS = {
-  LOCKOUT_DURATION_MS: 24 * 60 * 60 * 1000, // 24 hours
-  MAX_FAILED_ATTEMPTS: 3,
-  OTP_EXPIRY_MS: 10 * 60 * 1000, // 10 minutes
-  MAX_OTP_ATTEMPTS: 3,
-  SESSION_DURATION_MS: 4 * 60 * 60 * 1000 // 4 hours
+const SK_AUTH = {
+  ADMIN_EMAIL: "SKDEV_ADMIN_EMAIL",
+  INITIAL_PASSWORD: "SKDEV_INITIAL_PASSWORD",
+  PASSWORD_HASH: "SKDEV_PASSWORD_HASH",
+  PASSWORD_SALT: "SKDEV_PASSWORD_SALT",
+  SECRET: "SKDEV_AUTH_SECRET",
+  OTP_PREFIX: "SKDEV_OTP_",
+  SESSION_PREFIX: "SKDEV_SESSION_",
+  LAST_OTP_REQUEST: "SKDEV_LAST_OTP_REQUEST",
+  OTP_EXPIRY_MS: 5 * 60 * 1000,
+  SESSION_EXPIRY_MS: 4 * 60 * 60 * 1000,
+  MAX_OTP_ATTEMPTS: 5,
+  OTP_COOLDOWN_MS: 30 * 1000,
+  HASH_ITERATIONS: 10000
 };
 
-/**
- * Handle initial credential step: Email + Password verification, then dispatch 6-Digit Email OTP
- */
-function handleAdminLogin(payload) {
-  var props = PropertiesService.getScriptProperties();
-  var email = String(payload.email || '').trim().toLowerCase();
-  var password = String(payload.password || '');
+function authProperties_() {
+  return PropertiesService.getScriptProperties();
+}
 
-  // Check 24-Hour Lockout Status
-  var lockoutUntil = Number(props.getProperty('AUTH_LOCKOUT_UNTIL') || '0');
-  var now = Date.now();
-  if (now < lockoutUntil) {
-    var remainingHours = Math.ceil((lockoutUntil - now) / (60 * 60 * 1000));
-    logAuditEvent('LOGIN_LOCKED', 'Login attempt rejected due to active 24h lockout. Remaining: ' + remainingHours + ' hours.');
-    return {
-      success: false,
-      data: null,
-      error: {
-        code: 'ACCOUNT_LOCKED',
-        message: 'Security lockout active due to 3 consecutive failed attempts. Please retry in ' + remainingHours + ' hours or contact the root administrator.'
-      }
-    };
-  }
+function authJson_(data) {
+  return ContentService
+    .createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}
 
-  // Retrieve configured admin credentials from ScriptProperties
-  var adminEmail = String(props.getProperty('ADMIN_EMAIL') || 'suhailahmedaamro786@gmail.com').toLowerCase();
-  var passwordHash = props.getProperty('ADMIN_PASSWORD_HASH');
-  var passwordSalt = props.getProperty('ADMIN_PASSWORD_SALT') || 'sk_salt_default';
+function authEmail_(email) {
+  return String(email || "").trim().toLowerCase();
+}
 
-  // Verify email match
-  if (email !== adminEmail) {
-    recordFailedAttempt();
-    return {
-      success: false,
-      data: null,
-      error: { code: 'INVALID_CREDENTIALS', message: 'Invalid credentials provided.' }
-    };
-  }
+function authHmacWithSecret_(value, secret) {
+  return Utilities.base64EncodeWebSafe(
+    Utilities.computeHmacSha256Signature(
+      String(value),
+      String(secret)
+    )
+  );
+}
 
-  // If credentials are not yet initialized in ScriptProperties, provide bootstrap instruction
-  if (!passwordHash) {
-    return {
-      success: false,
-      data: null,
-      error: {
-        code: 'SETUP_REQUIRED',
-        message: 'Admin credentials have not been initialized. Please run initializeAdminCredentials(password) in the Apps Script console.'
-      }
-    };
-  }
-
-  // Validate Password Hash: SHA-256(password + salt)
-  var computedPassHash = hashWithSalt(password, passwordSalt);
-  var passValid = (computedPassHash === passwordHash);
-
-  if (!passValid) {
-    var failedCount = recordFailedAttempt();
-    var attemptsLeft = AUTH_CONSTANTS.MAX_FAILED_ATTEMPTS - failedCount;
-    
-    if (attemptsLeft <= 0) {
-      return {
-        success: false,
-        data: null,
-        error: {
-          code: 'ACCOUNT_LOCKED',
-          message: '3 consecutive failed attempts recorded. Account has been locked for 24 hours.'
-        }
-      };
-    }
-
-    return {
-      success: false,
-      data: null,
-      error: {
-        code: 'INVALID_CREDENTIALS',
-        message: 'Invalid credentials. Remaining attempts before 24-hour lockout: ' + attemptsLeft
-      }
-    };
-  }
-
-  // Credentials Valid! Generate Cryptographically Secure 6-Digit Email OTP
-  var otp = generateSecureOtp();
-  var challengeId = 'chn-' + Utilities.getUuid();
-  var otpExpiry = now + AUTH_CONSTANTS.OTP_EXPIRY_MS;
-
-  // Store OTP challenge state in ScriptProperties
-  props.setProperty('ACTIVE_OTP_CHALLENGE', challengeId);
-  props.setProperty('ACTIVE_OTP_HASH', hashWithSalt(otp, challengeId));
-  props.setProperty('ACTIVE_OTP_EXPIRY', String(otpExpiry));
-  props.setProperty('ACTIVE_OTP_ATTEMPTS', '0');
-
-  // Reset failed login counter upon successful credential match
-  props.deleteProperty('AUTH_FAILED_ATTEMPTS');
-
-  // Send OTP to authorized admin email via MailApp
-  try {
-    var subject = 'SK DEV TEAM Admin Login Verification Code (OTP: ' + otp + ')';
-    var emailBody = 'Assalam-o-Alaikum Suhail Ahmed,\n\n' +
-      'An administrative login request was initiated for the SK DEV TEAM Admin Console.\n\n' +
-      'Your One-Time Verification Code (OTP) is:\n\n' +
-      '    >>>  ' + otp + '  <<<\n\n' +
-      'This code will expire in 10 minutes.\n\n' +
-      'If you did not initiate this login, your credentials may have been compromised. Change your password immediately.\n\n' +
-      'SK DEV TEAM — Digital Solutions for Growing Businesses';
-
-    MailApp.sendEmail(adminEmail, subject, emailBody);
-  } catch (mailErr) {
-    Logger.log('MailApp error delivering OTP: ' + mailErr.toString());
-  }
-
-  logAuditEvent('OTP_DISPATCHED', 'Login challenge ' + challengeId + ' dispatched to authorized admin email.');
-
-  return {
-    success: true,
-    data: {
-      step: 'OTP_REQUIRED',
-      challengeId: challengeId,
-      expiresInSeconds: 600,
-      adminEmailMasked: email.slice(0, 3) + '***@' + email.split('@')[1],
-      message: 'A 6-digit verification code has been dispatched to your email.'
-    },
-    error: null
-  };
+function authHmac_(value) {
+  const secret = authProperties_().getProperty(SK_AUTH.SECRET);
+  if (!secret) throw new Error("Authentication is not initialized.");
+  return authHmacWithSecret_(value, secret);
 }
 
 /**
- * Handle Step 2: Verify 6-digit OTP and Issue Signed Session Token
+ * Keep the secret in memory during hashing rather than reading
+ * Script Properties on every iteration.
  */
-function handleVerifyOtp(payload) {
-  var props = PropertiesService.getScriptProperties();
-  var challengeId = String(payload.challengeId || '');
-  var enteredOtp = String(payload.otp || '').trim();
+function authPasswordHash_(password, salt) {
+  const props = authProperties_();
+  const secret = props.getProperty(SK_AUTH.SECRET);
 
-  var storedChallenge = props.getProperty('ACTIVE_OTP_CHALLENGE');
-  var storedOtpHash = props.getProperty('ACTIVE_OTP_HASH');
-  var storedExpiry = Number(props.getProperty('ACTIVE_OTP_EXPIRY') || '0');
-  var attempts = Number(props.getProperty('ACTIVE_OTP_ATTEMPTS') || '0');
+  if (!secret) throw new Error("Authentication secret is missing.");
+  if (!password || !salt) throw new Error("Password or salt is missing.");
 
-  var now = Date.now();
+  let value = String(salt) + ":" + String(password);
 
-  // Validate challenge existence
-  if (!storedChallenge || storedChallenge !== challengeId) {
-    return {
-      success: false,
-      data: null,
-      error: { code: 'INVALID_CHALLENGE', message: 'No active OTP challenge found. Please re-enter credentials.' }
-    };
+  for (let i = 0; i < SK_AUTH.HASH_ITERATIONS; i++) {
+    value = authHmacWithSecret_("password:" + value, secret);
   }
 
-  // Check expiry
-  if (now > storedExpiry) {
-    clearOtpChallenge();
-    return {
-      success: false,
-      data: null,
-      error: { code: 'OTP_EXPIRED', message: 'Verification code has expired. Please request a new login.' }
-    };
+  return value;
+}
+
+function authRequireInitialized_() {
+  const props = authProperties_();
+
+  const required = [
+    SK_AUTH.ADMIN_EMAIL,
+    SK_AUTH.PASSWORD_HASH,
+    SK_AUTH.PASSWORD_SALT,
+    SK_AUTH.SECRET
+  ];
+
+  const missing = required.filter(function(key) {
+    return !props.getProperty(key);
+  });
+
+  if (missing.length) {
+    throw new Error(
+      "Authentication setup incomplete. Missing: " + missing.join(", ")
+    );
   }
-
-  // Check attempts
-  if (attempts >= AUTH_CONSTANTS.MAX_OTP_ATTEMPTS) {
-    clearOtpChallenge();
-    recordFailedAttempt();
-    return {
-      success: false,
-      data: null,
-      error: { code: 'TOO_MANY_ATTEMPTS', message: 'Maximum OTP attempts exceeded. Please restart login.' }
-    };
-  }
-
-  // Validate OTP
-  var enteredHash = hashWithSalt(enteredOtp, challengeId);
-  if (enteredHash !== storedOtpHash) {
-    attempts++;
-    props.setProperty('ACTIVE_OTP_ATTEMPTS', String(attempts));
-    var remaining = AUTH_CONSTANTS.MAX_OTP_ATTEMPTS - attempts;
-    return {
-      success: false,
-      data: null,
-      error: {
-        code: 'INVALID_OTP',
-        message: 'Incorrect verification code. ' + remaining + ' attempts remaining.'
-      }
-    };
-  }
-
-  // SUCCESS! Invalidate OTP immediately to prevent reuse
-  clearOtpChallenge();
-
-  // Issue Cryptographically Signed Session Token
-  var sessionToken = issueSessionToken();
-  logAuditEvent('LOGIN_SUCCESS', 'Administrator successfully authenticated via 2FA OTP.');
-
-  return {
-    success: true,
-    data: {
-      token: sessionToken,
-      expiresAt: new Date(now + AUTH_CONSTANTS.SESSION_DURATION_MS).toISOString(),
-      admin: {
-        name: 'Suhail Ahmed',
-        email: 'suhailahmedaamro786@gmail.com',
-        role: 'SUPER_ADMIN'
-      }
-    },
-    error: null
-  };
 }
 
 /**
- * Handle Admin Logout
+ * Run once from the Apps Script editor after setting:
+ * SKDEV_ADMIN_EMAIL
+ * SKDEV_INITIAL_PASSWORD
+ *
+ * Do not run repeatedly after successful initialization.
  */
-function handleAdminLogout(payload) {
-  var props = PropertiesService.getScriptProperties();
-  if (payload.token) {
-    // Revoke token by adding to revocation list
-    props.setProperty('REVOKED_TOKEN_' + hashWithSalt(payload.token, 'revoke'), '1');
-  }
-  logAuditEvent('LOGOUT', 'Administrator logged out.');
-  return { success: true, data: { loggedOut: true }, error: null };
-}
+function initializeSKDevAuth() {
+  const props = authProperties_();
 
-/**
- * Assert that request contains a valid, non-expired, signed token
- */
-function assertAuthenticated(token) {
-  if (!token) {
-    throw new Error('Authentication required. Missing session token.');
+  const email = authEmail_(
+    props.getProperty(SK_AUTH.ADMIN_EMAIL)
+  );
+  const password = props.getProperty(SK_AUTH.INITIAL_PASSWORD);
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    throw new Error("Set a valid SKDEV_ADMIN_EMAIL in Script Properties.");
   }
 
-  var props = PropertiesService.getScriptProperties();
-  var secret = props.getProperty('JWT_SIGNING_SECRET') || 'sk_dev_team_secret_default';
-
-  // Check if token has been explicitly revoked
-  var isRevoked = props.getProperty('REVOKED_TOKEN_' + hashWithSalt(token, 'revoke'));
-  if (isRevoked) {
-    throw new Error('Session has been revoked. Please log in again.');
+  if (!password || password.length < 16) {
+    throw new Error(
+      "Set a unique temporary password of at least 16 characters."
+    );
   }
 
-  // Verify token format: payloadBase64.signature
-  var parts = String(token).split('.');
-  if (parts.length !== 2) {
-    throw new Error('Malformed session token format.');
+  if (props.getProperty(SK_AUTH.PASSWORD_HASH)) {
+    throw new Error(
+      "A password hash already exists. Do not initialize again."
+    );
   }
 
-  var payloadStr = Utilities.newBlob(Utilities.base64Decode(parts[0])).getDataAsString();
-  var sessionData;
-  try {
-    sessionData = JSON.parse(payloadStr);
-  } catch (e) {
-    throw new Error('Invalid token payload.');
-  }
+  let secret = props.getProperty(SK_AUTH.SECRET);
 
-  // Check expiration
-  if (!sessionData.exp || Date.now() > sessionData.exp) {
-    throw new Error('Session token expired. Please log in again.');
-  }
-
-  // Check signature match
-  var expectedSig = computeHmacSha256(parts[0], secret);
-  if (expectedSig !== parts[1]) {
-    throw new Error('Invalid session token signature.');
-  }
-
-  return sessionData;
-}
-
-// -------------------------------------------------------------
-// INTERNAL AUTH UTILITIES
-// -------------------------------------------------------------
-
-function hashWithSalt(value, salt) {
-  var combined = String(value) + '::' + String(salt);
-  var rawHash = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, combined);
-  var hex = '';
-  for (var i = 0; i < rawHash.length; i++) {
-    var byteVal = rawHash[i];
-    if (byteVal < 0) byteVal += 256;
-    var byteHex = byteVal.toString(16);
-    if (byteHex.length === 1) byteHex = '0' + byteHex;
-    hex += byteHex;
-  }
-  return hex;
-}
-
-function computeHmacSha256(message, secret) {
-  var raw = Utilities.computeHmacSignature(Utilities.MacAlgorithm.HMAC_SHA_256, message, secret);
-  return Utilities.base64Encode(raw).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-}
-
-function generateSecureOtp() {
-  // Use cryptographic random bytes
-  var randomBytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, Utilities.getUuid() + Date.now().toString());
-  var num = 0;
-  for (var i = 0; i < 4; i++) {
-    num = (num << 8) + (randomBytes[i] & 0xff);
-  }
-  var code = Math.abs(num % 900000) + 100000;
-  return String(code);
-}
-
-function issueSessionToken() {
-  var props = PropertiesService.getScriptProperties();
-  var secret = props.getProperty('JWT_SIGNING_SECRET');
   if (!secret) {
-    secret = Utilities.getUuid() + '-' + Utilities.getUuid();
-    props.setProperty('JWT_SIGNING_SECRET', secret);
+    secret = Utilities.getUuid() +
+      Utilities.getUuid() +
+      Utilities.getUuid();
+
+    props.setProperty(SK_AUTH.SECRET, secret);
   }
 
-  var now = Date.now();
-  var payload = {
-    sub: 'suhailahmedaamro786@gmail.com',
-    role: 'SUPER_ADMIN',
-    iat: now,
-    exp: now + AUTH_CONSTANTS.SESSION_DURATION_MS,
-    jti: Utilities.getUuid()
+  // Reuse an existing salt if an earlier attempt created one.
+  let salt = props.getProperty(SK_AUTH.PASSWORD_SALT);
+
+  if (!salt) {
+    salt = Utilities.getUuid() + Utilities.getUuid();
+    props.setProperty(SK_AUTH.PASSWORD_SALT, salt);
+  }
+
+  // Hashing may take time. Save the final hash only when complete.
+  const passwordHash = authPasswordHash_(password, salt);
+
+  props.setProperties({
+    SKDEV_ADMIN_EMAIL: email,
+    SKDEV_PASSWORD_SALT: salt,
+    SKDEV_PASSWORD_HASH: passwordHash
+  });
+
+  props.deleteProperty(SK_AUTH.INITIAL_PASSWORD);
+
+  return {
+    success: true,
+    message: "Authentication initialized. Temporary password deleted."
   };
-
-  var payloadEncoded = Utilities.base64Encode(JSON.stringify(payload)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-  var signature = computeHmacSha256(payloadEncoded, secret);
-
-  return payloadEncoded + '.' + signature;
 }
 
-function recordFailedAttempt() {
-  var props = PropertiesService.getScriptProperties();
-  var count = Number(props.getProperty('AUTH_FAILED_ATTEMPTS') || '0') + 1;
-  props.setProperty('AUTH_FAILED_ATTEMPTS', String(count));
+function beginAdminLogin_(email, password) {
+  authRequireInitialized_();
 
-  if (count >= AUTH_CONSTANTS.MAX_FAILED_ATTEMPTS) {
-    var lockoutTime = Date.now() + AUTH_CONSTANTS.LOCKOUT_DURATION_MS;
-    props.setProperty('AUTH_LOCKOUT_UNTIL', String(lockoutTime));
-    logAuditEvent('LOCKOUT_TRIGGERED', '3 consecutive failed login attempts detected. 24-hour lockout activated.');
+  const props = authProperties_();
+  const adminEmail = authEmail_(
+    props.getProperty(SK_AUTH.ADMIN_EMAIL)
+  );
+
+  if (authEmail_(email) !== adminEmail) {
+    throw new Error("Invalid email or password.");
   }
 
-  return count;
-}
+  const salt = props.getProperty(SK_AUTH.PASSWORD_SALT);
+  const expectedHash = props.getProperty(SK_AUTH.PASSWORD_HASH);
+  const suppliedHash = authPasswordHash_(password, salt);
 
-function clearOtpChallenge() {
-  var props = PropertiesService.getScriptProperties();
-  props.deleteProperty('ACTIVE_OTP_CHALLENGE');
-  props.deleteProperty('ACTIVE_OTP_HASH');
-  props.deleteProperty('ACTIVE_OTP_EXPIRY');
-  props.deleteProperty('ACTIVE_OTP_ATTEMPTS');
-}
+  if (!authConstantTimeEqual_(suppliedHash, expectedHash)) {
+    throw new Error("Invalid email or password.");
+  }
 
-function logAuditEvent(eventType, details) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+
+  let challengeId;
+  let otp;
+
   try {
-    var ss = getSpreadsheet();
-    var sheet = ss.getSheetByName('AdminAudit');
-    if (!sheet) {
-      sheet = ss.insertSheet('AdminAudit');
-      sheet.appendRow(['Timestamp', 'EventType', 'Details', 'Actor']);
+    const now = Date.now();
+    const lastRequest = Number(
+      props.getProperty(SK_AUTH.LAST_OTP_REQUEST) || "0"
+    );
+
+    if (now - lastRequest < SK_AUTH.OTP_COOLDOWN_MS) {
+      throw new Error("Wait 30 seconds before requesting another OTP.");
     }
-    sheet.appendRow([new Date().toISOString(), eventType, details, 'System/Admin']);
-  } catch (e) {
-    Logger.log('Audit log error: ' + e.toString());
+
+    const allProps = props.getProperties();
+
+    Object.keys(allProps).forEach(function(key) {
+      if (key.indexOf(SK_AUTH.OTP_PREFIX) === 0) {
+        props.deleteProperty(key);
+      }
+    });
+
+    challengeId = Utilities.getUuid();
+    const hex = Utilities.getUuid().replace(/-/g, "").slice(0, 8);
+    otp = String(parseInt(hex, 16) % 1000000).padStart(6, "0");
+
+    const challenge = {
+      email: adminEmail,
+      otpHash: authHmac_("otp:" + challengeId + ":" + otp),
+      expiresAt: now + SK_AUTH.OTP_EXPIRY_MS,
+      attempts: 0
+    };
+
+    props.setProperty(
+      SK_AUTH.OTP_PREFIX + challengeId,
+      JSON.stringify(challenge)
+    );
+
+    props.setProperty(SK_AUTH.LAST_OTP_REQUEST, String(now));
+  } finally {
+    lock.releaseLock();
+  }
+
+  try {
+    MailApp.sendEmail({
+      to: adminEmail,
+      subject: "SK DEV TEAM — Admin Login OTP",
+      body:
+        "Your verification code is: " + otp +
+        "\nIt expires in 5 minutes. Never share this code."
+    });
+  } catch (error) {
+    props.deleteProperty(SK_AUTH.OTP_PREFIX + challengeId);
+    throw new Error("Could not send OTP. Check Mail authorization.");
+  }
+
+  return {
+    success: true,
+    challengeId: challengeId,
+    message: "Verification code sent to admin email.",
+    expiresInSeconds: 300
+  };
+}
+
+function verifyAdminOtp_(challengeId, otp) {
+  authRequireInitialized_();
+
+  challengeId = String(challengeId || "");
+  otp = String(otp || "");
+
+  if (!/^[a-f0-9-]{36}$/i.test(challengeId) || !/^\d{6}$/.test(otp)) {
+    throw new Error("Invalid or expired verification challenge.");
+  }
+
+  const props = authProperties_();
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+
+  let session;
+
+  try {
+    const key = SK_AUTH.OTP_PREFIX + challengeId;
+    const raw = props.getProperty(key);
+
+    if (!raw) throw new Error("Invalid or expired verification challenge.");
+
+    const challenge = JSON.parse(raw);
+
+    if (Date.now() > challenge.expiresAt) {
+      props.deleteProperty(key);
+      throw new Error("OTP expired. Please log in again.");
+    }
+
+    challenge.attempts++;
+
+    if (challenge.attempts > SK_AUTH.MAX_OTP_ATTEMPTS) {
+      props.deleteProperty(key);
+      throw new Error("Too many attempts. Please log in again.");
+    }
+
+    props.setProperty(key, JSON.stringify(challenge));
+
+    const supplied = authHmac_(
+      "otp:" + challengeId + ":" + otp
+    );
+
+    if (!authConstantTimeEqual_(supplied, challenge.otpHash)) {
+      throw new Error("Incorrect OTP.");
+    }
+
+    props.deleteProperty(key);
+
+    const now = Date.now();
+    session = {
+      sid: Utilities.getUuid(),
+      email: challenge.email,
+      issuedAt: now,
+      expiresAt: now + SK_AUTH.SESSION_EXPIRY_MS
+    };
+
+    props.setProperty(
+      SK_AUTH.SESSION_PREFIX + session.sid,
+      JSON.stringify(session)
+    );
+  } finally {
+    lock.releaseLock();
+  }
+
+  const payload = Utilities.base64EncodeWebSafe(
+    JSON.stringify(session),
+    Utilities.Charset.UTF_8
+  );
+
+  return {
+    success: true,
+    token: payload + "." + authHmac_("session:" + payload),
+    email: session.email,
+    expiresAt: session.expiresAt
+  };
+}
+
+function authConstantTimeEqual_(a, b) {
+  a = String(a || "");
+  b = String(b || "");
+
+  let diff = a.length ^ b.length;
+  const maxLength = Math.max(a.length, b.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    diff |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
+  }
+
+  return diff === 0;
+}
+
+function verifyAdminSession_(token) {
+  authRequireInitialized_();
+
+  const parts = String(token || "").split(".");
+  if (parts.length !== 2 || !parts[0] || !parts[1]) {
+    throw new Error("Invalid session. Please log in again.");
+  }
+
+  const payload = parts[0];
+  const expected = authHmac_("session:" + payload);
+
+  if (!authConstantTimeEqual_(parts[1], expected)) {
+    throw new Error("Invalid session signature.");
+  }
+
+  let session;
+
+  try {
+    session = JSON.parse(
+      Utilities.newBlob(
+        Utilities.base64DecodeWebSafe(payload)
+      ).getDataAsString()
+    );
+  } catch (error) {
+    throw new Error("Invalid session.");
+  }
+
+  const adminEmail = authEmail_(
+    authProperties_().getProperty(SK_AUTH.ADMIN_EMAIL)
+  );
+
+  if (
+    !session.sid ||
+    authEmail_(session.email) !== adminEmail ||
+    !session.expiresAt ||
+    Date.now() >= session.expiresAt
+  ) {
+    throw new Error("Session expired or invalid.");
+  }
+
+  const stored = authProperties_().getProperty(
+    SK_AUTH.SESSION_PREFIX + session.sid
+  );
+
+  if (!stored) throw new Error("Session revoked.");
+
+  const active = JSON.parse(stored);
+
+  if (
+    active.email !== session.email ||
+    active.expiresAt !== session.expiresAt
+  ) {
+    throw new Error("Session is invalid.");
+  }
+
+  return {
+    email: session.email,
+    expiresAt: session.expiresAt
+  };
+}
+
+function logoutAdmin_(token) {
+  const sessionInfo = verifyAdminSession_(token);
+  const payload = String(token).split(".")[0];
+
+  const session = JSON.parse(
+    Utilities.newBlob(
+      Utilities.base64DecodeWebSafe(payload)
+    ).getDataAsString()
+  );
+
+  authProperties_().deleteProperty(
+    SK_AUTH.SESSION_PREFIX + session.sid
+  );
+
+  return { success: true, message: "Logged out." };
+}
+
+function doGet(e) {
+  const action = e && e.parameter ? e.parameter.action : "";
+
+  if (action === "health") {
+    const props = authProperties_();
+    const initialized = Boolean(
+      props.getProperty(SK_AUTH.ADMIN_EMAIL) &&
+      props.getProperty(SK_AUTH.PASSWORD_HASH) &&
+      props.getProperty(SK_AUTH.PASSWORD_SALT) &&
+      props.getProperty(SK_AUTH.SECRET)
+    );
+
+    return authJson_({
+      success: true,
+      service: "SK DEV TEAM Auth API",
+      initialized: initialized
+    });
+  }
+
+  return authJson_({
+    success: true,
+    message: "SK DEV TEAM API is running."
+  });
+}
+
+function doPost(e) {
+  try {
+    const raw = e && e.postData && e.postData.contents
+      ? e.postData.contents
+      : "{}";
+
+    const body = JSON.parse(raw);
+    let result;
+
+    switch (body.action) {
+      case "login":
+        result = beginAdminLogin_(body.email, body.password);
+        break;
+      case "verifyOtp":
+        result = verifyAdminOtp_(body.challengeId, body.otp);
+        break;
+      case "checkSession":
+        result = {
+          success: true,
+          session: verifyAdminSession_(body.token)
+        };
+        break;
+      case "logout":
+        result = logoutAdmin_(body.token);
+        break;
+      default:
+        return authJson_({
+          success: false,
+          message: "Unsupported API action."
+        });
+    }
+
+    return authJson_(result);
+  } catch (error) {
+    return authJson_({
+      success: false,
+      message: String(error.message || "Request failed.")
+    });
   }
 }

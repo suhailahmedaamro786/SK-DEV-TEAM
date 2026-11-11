@@ -182,6 +182,11 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
+        <div className="pt-5 border-t border-[#33353a]/40 flex flex-col items-center text-center gap-2">
+          <span className="text-sm font-bold tracking-wide text-[#e2e2e9]">FOUNDER: SUHAIL AHMED AAMRO</span>
+          <span className="text-xs font-semibold text-[#44dfab]">SK DEV TEAM</span>
+          <p className="text-xs text-[#918fa1] italic">InshaAllah, we will return stronger than ever. Our best comeback is yet to come.</p>
+        </div>
       </div>
     </footer>
   );

@@ -15,16 +15,16 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         name: 'Small Package',
         subtitle: 'Basic Online Presence',
         features: [
-          'Simple, professional aur fully mobile-responsive website',
+          'Simple, professional and fully mobile-responsive website',
           'Single Home page ya compact landing page structure',
-          'About us aur services information section (agreed scope ke mutabiq)',
+          'About us and services information section (agreed scope according to the agreed scope)',
           'Complete business contact information',
           'Direct WhatsApp chat contact button',
-          'Basic page titles aur fundamental SEO meta setup',
+          'Basic page titles and fundamental SEO meta setup',
           'Basic deployment assistance (Vercel / Netlify / Hosting)'
         ],
-        suitableFor: 'New startups, local businesses aur consultants jinhein foran ek simple aur clean online presence chahiye.',
-        quotationRequirements: 'Page count aur content scope discussion ke baad confirm hota hai. Additional pages alag quotation mein aate hain.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -33,14 +33,14 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Multiple dedicated pages (Home, About, Services, Contact, Blog/Team)',
           'Zyada customized modern visual design',
           'Detailed services showcase ya product catalogue preview',
-          'Interactive contact aur business inquiry form',
+          'Interactive contact and business inquiry form',
           'WhatsApp integration with customized pre-filled message',
           'Enhanced on-page SEO (headings, meta descriptions, image alt tags)',
-          'Smooth animations aur modern interactive UI elements',
-          'Analytics ya Google conversion tracking setup (agar required ho)'
+          'Smooth animations and modern interactive UI elements',
+          'Analytics ya Google conversion tracking setup (if required ho)'
         ],
-        suitableFor: 'Growing businesses aur agencies jo apni services ko detail mein show karke leads capture karna chahte hain.',
-        quotationRequirements: 'Content drafting, specific custom graphics aur multiple language support separately quote hoti hain.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -50,13 +50,13 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Large page & structured content architecture',
           'Advanced multi-step lead capture workflows',
           'Custom third-party integrations (CRM, newsletter, booking links)',
-          'Top-tier Core Web Vitals optimization aur speed performance',
+          'Top-tier Core Web Vitals optimization and speed performance',
           'Comprehensive SEO structure (schema markup, sitemaps, open-graph)',
-          'Advanced conversion tracking aur telemetry analytics',
-          'Agreed post-launch maintenance & dedicated support (quotation ke mutabiq)'
+          'Advanced conversion tracking and telemetry analytics',
+          'Agreed post-launch maintenance & dedicated support (quotation according to the agreed scope)'
         ],
-        suitableFor: 'Established enterprises, corporate organizations aur brands jinhein top-tier design aur high conversion system chahiye.',
-        quotationRequirements: 'Ongoing monthly retainer ya complex CRM workflows scope review ke baad quote kiye jaate hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -65,7 +65,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'CMS / Blog publishing dashboard',
       'Custom corporate email setup'
     ],
-    quotationNotice: 'Page counts aur custom integrations project scope discussion ke baad confirm hote hain.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['sk-portfolio', 'sk-builder']
   },
   {
@@ -83,13 +83,13 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         subtitle: 'Basic Personal Brand',
         features: [
           'Personal introduction & bio banner',
-          'Skills matrix aur core competencies section',
+          'Skills matrix and core competencies section',
           'Selected projects showcase cards with external links',
-          'Direct contact details, social links aur WhatsApp button',
+          'Direct contact details, social links and WhatsApp button',
           'Fully responsive clean layout'
         ],
-        suitableFor: 'Students, junior developers aur freelancers jo apna pehla live portfolio launch karna chahte hain.',
-        quotationRequirements: 'Projects count limited to agreed items in initial scope.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -97,12 +97,12 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         features: [
           'Multiple categorized portfolio sections',
           'Detailed interactive project cards with live demo buttons & GitHub links',
-          'Client testimonials section (agar genuine testimonials provide kiye gaye hon)',
-          'Interactive contact form aur smooth animated transitions',
-          'On-page SEO aur speed optimization'
+          'Client testimonials section (if genuine testimonials provide kiye gaye hon)',
+          'Interactive contact form and smooth animated transitions',
+          'On-page SEO and speed optimization'
         ],
-        suitableFor: 'Active freelancers aur senior professionals jo high-ticket international clients close karna chahte hain.',
-        quotationRequirements: 'Client testimonials verified hone chahiye, fake testimonials nahi add kiye jaate.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -110,12 +110,12 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         features: [
           'High-end bespoke portfolio presentation with rich dark/light UI',
           'Dynamic project filtering by technology & category, plus search bar',
-          'CMS or editable content option (agar separately configure kiya jaye)',
-          'Deep case studies, interactive project galleries aur modal spec viewers',
-          'Custom micro-interactions, resume download tracking aur analytics'
+          'CMS or editable content option (if separately configure kiya jaye)',
+          'Deep case studies, interactive project galleries and modal spec viewers',
+          'Custom micro-interactions, resume download tracking and analytics'
         ],
-        suitableFor: 'Elite creative agencies, technical directors aur high-profile consultants.',
-        quotationRequirements: 'Backend CMS setup aur custom animations client requirements ke mutabiq quote hotay hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -124,7 +124,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Calendly / Google Calendar booking embed',
       'Video interview or case study showcase reel'
     ],
-    quotationNotice: 'Custom CMS integration aur case study writing separately quote kiye jaate hain.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['sk-portfolio']
   },
   {
@@ -144,39 +144,39 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Organized product catalogue with high-res photos, titles & prices',
           'Categorized product listings',
           'Direct WhatsApp order or inquiry button on each product',
-          'Basic cart-like selection (agar agreed scope mein shamil ho)',
+          'Basic cart-like selection (if agreed scope included in the scope ho)',
           'Clean, mobile-optimized responsive layout'
         ],
-        suitableFor: 'Local vendors aur home businesses jinhein foran online product catalogue launch karni ho.',
-        quotationRequirements: 'Online payments aur automatic backend database is package mein shamil nahi hoti.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
         subtitle: 'Standard Online Store',
         features: [
-          'Expanded product catalogue with search aur category filters',
-          'Full shopping cart & checkout flow (chosen architecture ke mutabiq)',
+          'Expanded product catalogue with search and category filters',
+          'Full shopping cart & checkout flow (chosen architecture according to the agreed scope)',
           'Customer order entry form with delivery address fields',
           'Clear order summary with subtotal, tax/delivery calculation',
-          'Admin product management panel (agar scope mein shamil ho)',
-          'Order-status workflow (agar backend agreed ho)'
+          'Admin product management panel (if scope included in the scope ho)',
+          'Order-status workflow (if backend agreed ho)'
         ],
-        suitableFor: 'Established retail shops aur D2C brands jinhein regular order pipeline automate karni ho.',
-        quotationRequirements: 'Payment gateway integration aur server database configuration separately confirm hoti hai.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
         subtitle: 'Enterprise Commerce Platform',
         features: [
           'Advanced multi-category shopping experience with instant search',
-          'Customer accounts & login system (agar required ho)',
+          'Customer accounts & login system (if required ho)',
           'Advanced inventory & order management backend workflows',
-          'Real payment gateway integration (Stripe / Bank / JazzCash / EasyPaisa agar approved ho)',
-          'Discount coupons, sales reporting dashboards aur email alerts',
-          'Role-based admin access aur strict database security hardening'
+          'Real payment gateway integration (Stripe / Bank / JazzCash / EasyPaisa if approved ho)',
+          'Discount coupons, sales reporting dashboards and email alerts',
+          'Role-based admin access and strict database security hardening'
         ],
-        suitableFor: 'High-volume e-commerce brands aur multi-vendor or multi-branch retail businesses.',
-        quotationRequirements: 'Payment gateway approvals, merchant merchant account credentials aur third-party transaction fees client ki responsibility hoti hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -185,7 +185,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Automated SMS / Email receipt dispatch',
       'Courier API integration (Trax, PostEx, Leopard, etc.)'
     ],
-    quotationNotice: 'Online payments, customer accounts, inventory management aur complex admin systems har package mein automatically included nahi hotay; inhein specific scope ke mutabiq quote kiya jata hai.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['d-pizza']
   },
   {
@@ -208,22 +208,22 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Basic order summary',
           'Instant WhatsApp dispatch button with pre-formatted message'
         ],
-        suitableFor: 'Chhotay food points, single-item businesses aur home kitchens.',
-        quotationRequirements: 'Limited menu items. Custom multi-variant choices is package mein basic rehti hain.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
         subtitle: 'Smart Ordering & Cart Control',
         features: [
-          'Product categories (Burgers, Drinks, Deals, etc.) aur instant search',
+          'Product categories (Burgers, Drinks, Deals, etc.) and instant search',
           'Advanced cart with quantity increment/decrement controls',
           'Complete customer delivery details (Address, Area, Special Instructions)',
           'Automatic order total calculation with delivery charges',
           'Smart WhatsApp message generated dynamically from actual cart',
           'Optimized mobile ordering experience with bottom floating cart'
         ],
-        suitableFor: 'Popular restaurants, pizza shops, delivery kitchens aur boutiques.',
-        quotationRequirements: 'Custom addon choices (extra cheese, sauces) discussion ke baad add hoti hain.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -233,10 +233,10 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Custom order workflows (Delivery vs Takeaway vs Dine-in selection)',
           'Multiple branch / location selector with branch-specific WhatsApp routing',
           'Optional admin order management / receipts if backend agreed',
-          'Sales telemetry and daily order export reports (agar scope mein shamil ho)'
+          'Sales telemetry and daily order export reports (if scope included in the scope ho)'
         ],
-        suitableFor: 'Multi-branch food chains aur large retail businesses.',
-        quotationRequirements: 'Remember: WhatsApp par order bhejna aur database-backed centralized management system do alag cheezein hain. Backend database ke liye alag module configure hota hai.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -245,7 +245,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Automated thermal print receipt formatting',
       'Promo codes / discounts calculation'
     ],
-    quotationNotice: 'WhatsApp par order dispatch hona ek client-side convenience hai; centralized live database order tracking ke liye backend system quote kiya jata hai.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['d-pizza']
   },
   {
@@ -264,25 +264,25 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         features: [
           'Modern school presentation website',
           'Classes, courses & campus information',
-          'Faculty & staff directory (provided data ke mutabiq)',
+          'Faculty & staff directory (provided data according to the agreed scope)',
           'Online admission inquiry form',
           'Direct contact details, location map & WhatsApp inquiry button'
         ],
-        suitableFor: 'Schools jinhein pehle ek professional online presence aur admission inquiries collect karni hon.',
-        quotationRequirements: 'Is package mein live student database nahi hota, sirf inquiry form hota hai.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
         subtitle: 'LMS Core & Student Records',
         features: [
           'Student records database & admission management workflow',
-          'Teacher portal & student directory access (agar backend configured ho)',
-          'Attendance tracking module (agar agreed ho)',
+          'Teacher portal & student directory access (if backend configured ho)',
+          'Attendance tracking module (if agreed ho)',
           'Admin dashboard for school operations overview',
           'Academic reports appropriate to implemented modules'
         ],
-        suitableFor: 'Private schools aur academies jo manual register se digital record system par switch hona chahti hain.',
-        quotationRequirements: 'Database hosting aur specific operational modules scope discussion ke baad finalize hotay hain.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -291,12 +291,12 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Expanded institutional management modules',
           'Strict role-based access for Admin, Principal, Teachers, Students & Parents',
           'Comprehensive attendance, grading book, exam schedules & student report cards',
-          'Student ID cards generation or QR code workflows (agar implemented ho)',
-          'Document repository, notifications & fee voucher tracking (agar configured ho)',
+          'Student ID cards generation or QR code workflows (if implemented ho)',
+          'Document repository, notifications & fee voucher tracking (if configured ho)',
           'Custom school-specific operational workflows & integrations'
         ],
-        suitableFor: 'Large school campuses, college networks aur progressive education groups.',
-        quotationRequirements: 'Bina working configured backend ke full system nahi chalta; quotation mein server, backup aur maintenance clearly define hotay hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -305,7 +305,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Online quiz & assignment submission portal',
       'Library & asset tracking module'
     ],
-    quotationNotice: 'Hum clearly batate hain ke school system working backend ke baghair operational nahi hota; quotation mein exact modules confirm kiye jaate hain.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['education-hub', 'dccid']
   },
   {
@@ -328,8 +328,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Fully responsive modern desktop and tablet layout',
           'Mock data rendering ya single API connection'
         ],
-        suitableFor: 'MVPs, internal monitoring of a single workflow aur prototype demonstrations.',
-        quotationRequirements: 'Authentication aur live database connection basic scope ke mutabiq decide hoti hai.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -339,10 +339,10 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Live table search, column filters, and pagination',
           'Data entry & update forms with frontend validation',
           'Interactive charts and KPI performance graphs (real data supported)',
-          'Authentication & session security (agar configured ho)'
+          'Authentication & session security (if configured ho)'
         ],
-        suitableFor: 'Mid-sized businesses jo daily sales, clients ya internal task distribution manage karna chahti hain.',
-        quotationRequirements: 'Real database (PostgreSQL, Supabase, Firebase) setup ki requirement hoti hai.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -351,12 +351,12 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Advanced multi-role permissions (Super Admin, Manager, Operator, Viewer)',
           'Complex data workflows with bulk actions and real-time socket updates',
           'Export to CSV, Excel, and PDF reports',
-          'Audit trail logs and action history (agar implemented ho)',
+          'Audit trail logs and action history (if implemented ho)',
           'Third-party API integrations (Payment gateways, CRM, Cloud services)',
           'Strict operational controls, rate limiting and encryption standards'
         ],
-        suitableFor: 'Scale-ups, enterprise logistics, fintech dashboards aur mission-critical platforms.',
-        quotationRequirements: 'Data sources, API access aur security protocols client ki requirements ke mutabiq quote hotay hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -365,7 +365,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Dark / Light theme switch for staff ergonomics',
       'Role-based permission editor'
     ],
-    quotationNotice: 'Dashboard ko real business data par run karne ke liye backend data source aur access permissions ki zaroorat hoti hai.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['dccid', 'education-hub']
   },
   {
@@ -388,8 +388,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Modern responsive UI layout',
           'Agreed Minimum Viable Product (MVP) deployment'
         ],
-        suitableFor: 'Proof-of-concept testing, client pitches aur targeted utility tools.',
-        quotationRequirements: 'Scope strictly limited to 1 primary feature loop.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -398,12 +398,12 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Multiple connected user workflows',
           'Additional supporting modules & settings',
           'Data persistence through an agreed backend (SQL / NoSQL)',
-          'Secure user authentication & account handling (agar required ho)',
+          'Secure user authentication & account handling (if required ho)',
           'Search, filtering, and data management',
           'Integration with approved third-party services'
         ],
-        suitableFor: 'Growing commercial SaaS products aur business automation web apps.',
-        quotationRequirements: 'Database architecture aur external API availability verify karke final quote tayar hoti hai.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -416,8 +416,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Comprehensive error handling, automated testing within agreed scope',
           'Production cloud deployment, documentation, and handoff'
         ],
-        suitableFor: 'High-scale commercial platforms, B2B SaaS platforms aur venture-backed software.',
-        quotationRequirements: 'Pehle client ka problem statement aur architecture design review kiya jata hai.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -426,7 +426,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Real-time collaborative features',
       'Mobile PWA installability'
     ],
-    quotationNotice: 'Hum pehle pochte hain ke client kaun sa masla hal karna chahta hai, phir exact package aur timeline suggest karte hain.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['ai-booking', 'education-hub', 'dccid']
   },
   {
@@ -449,21 +449,21 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Direct WhatsApp ya email dispatch option',
           'Clean responsive booking UI'
         ],
-        suitableFor: 'Solo consultants aur clinics jo appointment requests WhatsApp ya email par receive karna chahte hain.',
-        quotationRequirements: 'Is package mein real-time calendar availability check nahi hota, request notification hoti hai.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
         subtitle: 'Managed Appointment System',
         features: [
-          'Persistent appointment records (agar backend configure kiya jaye)',
+          'Persistent appointment records (if backend configure kiya jaye)',
           'Admin appointment management console (accept, reschedule, cancel)',
           'Clear booking-status workflow',
-          'Email notifications for booking confirmations (agar configured ho)',
+          'Email notifications for booking confirmations (if configured ho)',
           'Basic calendar view where implemented'
         ],
-        suitableFor: 'Busy clinics aur service offices jinhein daily appointments schedule manage karni ho.',
-        quotationRequirements: 'Email SMTP server aur database configuration scope mein decide hoti hai.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -471,13 +471,13 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         features: [
           'Advanced scheduling rules, buffer times, and holiday blocking',
           'Multiple staff members or service categories selection',
-          'Live availability checks (agar backend calendar API sync supported ho)',
-          'Automated SMS / WhatsApp reminders (agar third-party provider configured ho)',
+          'Live availability checks (if backend calendar API sync supported ho)',
+          'Automated SMS / WhatsApp reminders (if third-party provider configured ho)',
           'Deposit / advance payment collection options if agreed',
           'Role-based administration and operational reports'
         ],
-        suitableFor: 'Multi-doctor healthcare clinics, salon chains aur premium consultancy firms.',
-        quotationRequirements: 'Real-time calendar sync aur automatic SMS reminders third-party APIs par depend karte hain jinka separate usage cost hota hai.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -486,7 +486,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Advance deposit checkout pipeline',
       'Staff specific calendar management'
     ],
-    quotationNotice: 'Real-time availability aur automatic reminders sirf tab promise kiye jaate hain jab unka backend aur third-party API setup quote mein agreed ho.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['ai-booking']
   },
   {
@@ -508,8 +508,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Direct contact routing and quick action buttons',
           'Zero-cost browser execution (no paid external AI subscription required)'
         ],
-        suitableFor: 'Websites jinhein standard customer questions aur service orientation automate karni ho.',
-        quotationRequirements: 'No external LLM API cost. Completely reliable browser-based assistant.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -518,11 +518,11 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Advanced conversational logic and intent matching',
           'Detailed service & package breakdowns in Roman Urdu / English',
           'Context-aware lead capture form guidance',
-          'Connected knowledge base or custom API integration (agar configured ho)',
+          'Connected knowledge base or custom API integration (if configured ho)',
           'Modern sleek chat UI with voice synthesis audio option'
         ],
-        suitableFor: 'Businesses jo visitors ko qualify karke accurate project applications collect karna chahte hain.',
-        quotationRequirements: 'External AI API keys or custom endpoints separate quote ke mutabiq configure hotay hain.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -530,12 +530,12 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         features: [
           'Bespoke AI workflows tailored to business data',
           'External tool calling & database query integrations',
-          'Document retrieval / RAG knowledge base (agar configured ho)',
+          'Document retrieval / RAG knowledge base (if configured ho)',
           'Seamless escalation to human WhatsApp / CRM team',
           'Conversation analytics, feedback logs, and continuous tuning'
         ],
-        suitableFor: 'Enterprises jo deep automation aur real-time data lookups implement karna chahte hain.',
-        quotationRequirements: 'Live AI model tokens aur external hosting ke usage costs separate hotay hain; hum client ko transparently guide karte hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -544,7 +544,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'CRM lead auto-forwarding',
       'Custom vector database for private documents'
     ],
-    quotationNotice: 'Predefined browser assistant aur live LLM API agent mein farq hota hai; live AI model usage aur API tokens ke alag costs hotay hain.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['ai-booking']
   },
   {
@@ -565,8 +565,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Simple form-to-email or form-to-notification dispatch',
           'Basic data transfer between supported channels'
         ],
-        suitableFor: 'Single landing page alerts aur direct email/WhatsApp routing.',
-        quotationRequirements: 'Limited to 1 trigger and 1 action point.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -577,8 +577,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Notification dispatch across multiple channels',
           'Integration with approved tools (Google Sheets, CRM, Webhooks)'
         ],
-        suitableFor: 'Companies jo customer inquiry aane par CRM update, email notify aur team alert aik sath chahti hain.',
-        quotationRequirements: 'Third-party API accounts client provide karta hai.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -590,8 +590,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Advanced permission controls and execution history logs',
           'Extensive testing, documentation, and handoff support'
         ],
-        suitableFor: 'Logistics pipelines, multi-platform inventory syncing aur financial reporting.',
-        quotationRequirements: 'System access aur API limits analyze karne ke baad precise quotation di jati hai.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -600,7 +600,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Slack / Discord / Telegram team bots',
       'Scheduled cron job batch processors'
     ],
-    quotationNotice: 'Automation client ke pass maujood systems aur unki APIs par depend karti hai; pehle exact workflow confirm kiya jata hai.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['ai-booking', 'dccid']
   },
   {
@@ -622,8 +622,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Direct contact or WhatsApp lead button',
           'Mobile-responsive fast-loading layout'
         ],
-        suitableFor: 'Fast promo launches, simple service offers aur quick ad tests.',
-        quotationRequirements: 'Client copy and images provided.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -633,10 +633,10 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Interactive lead capture form with instant validation',
           'Client-supplied testimonials & proof showcase',
           'Enhanced visual effects, micro-animations & on-page SEO',
-          'Ad campaign tracking scripts (Meta Pixel / Google Tag Manager agar configured ho)'
+          'Ad campaign tracking scripts (Meta Pixel / Google Tag Manager if configured ho)'
         ],
-        suitableFor: 'Active ad spenders jo maximum lead conversion rate chahte hain.',
-        quotationRequirements: 'Ad tracking IDs client ko provide karni hoti hain.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -648,8 +648,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Additional qualification forms and custom routing workflows',
           'In-depth performance optimization for sub-second ad load speed'
         ],
-        suitableFor: 'High-budget commercial marketing campaigns aur multi-tier offers.',
-        quotationRequirements: 'A/B testing tools aur external marketing software separate hotay hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -658,7 +658,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Countdown offer timer',
       'Direct WhatsApp click tracking'
     ],
-    quotationNotice: 'Ad setup aur media spend client ka hota hai; SK DEV TEAM high-conversion web engineering provide karti hai.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['sk-builder', 'd-pizza']
   },
   {
@@ -681,8 +681,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Basic XML sitemap & robots.txt configuration',
           'Google Search Console indexing readiness checks'
         ],
-        suitableFor: 'New websites jinhein initial search indexing theek karwani ho.',
-        quotationRequirements: 'Guaranteed 1st position claim hum nahi karte, genuine best practices enforce karte hain.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -694,8 +694,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Schema.org structured data (Organization, LocalBusiness, Breadcrumb)',
           'Mobile usability and Core Web Vitals speed improvements'
         ],
-        suitableFor: 'Established businesses jo local competition ko beat karna chahte hain.',
-        quotationRequirements: 'Ongoing link building is package mein shamil nahi hoti.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -707,8 +707,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Speed performance optimization for sub-second Lighthouse scores',
           'Ongoing monthly SEO retaining arrangements (sirf agreed contract ke tehat)'
         ],
-        suitableFor: 'Corporate brands aur e-commerce sites jin ke liye organic search primary revenue stream hai.',
-        quotationRequirements: 'Google ranking competition, time, content quality aur indexing par depend karti hai; koi fake guarantee nahi di jati.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -717,7 +717,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Image WebP compression pipeline',
       'Competitor SEO keyword audit report'
     ],
-    quotationNotice: 'Hum kabhi bhi first-place Google ranking ki fake guarantee nahi dete; rankings content, competition aur time par depend karti hain.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['sk-portfolio']
   },
   {
@@ -738,8 +738,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Agreed minor bug fixes or alignment issues',
           'Basic SSL and broken link checks'
         ],
-        suitableFor: 'Chhoti websites jinhein month mein aik ya do dafa chhotay updates chahiye hotay hain.',
-        quotationRequirements: 'Limited to agreed batch of tasks.'
+        suitableFor: 'Startups, small teams, and businesses launching an essential first version.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       medium: {
         name: 'Medium Package',
@@ -750,8 +750,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Core Web Vitals and speed performance audits',
           'Additional bug fixes and defined operational support window'
         ],
-        suitableFor: 'Growing commercial websites jin par regular promotions aur content changes aati hain.',
-        quotationRequirements: 'Hours and scope defined in the maintenance agreement.'
+        suitableFor: 'Growing businesses that need expanded features, integrations, and structured workflows.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       },
       premium: {
         name: 'Premium Package',
@@ -763,8 +763,8 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
           'Defined priority response times in the SLA agreement',
           'Dedicated senior developer consultation hours'
         ],
-        suitableFor: 'Mission-critical web platforms, portals aur enterprise applications.',
-        quotationRequirements: 'Free unlimited maintenance ka promise nahi kiya jata; clear terms contract mein hoti hain.'
+        suitableFor: 'Established organizations that need advanced customization, integrations, and scalable operations.',
+        quotationRequirements: 'Final inclusions, integrations, dependencies, and delivery expectations are confirmed in the written quotation.'
       }
     },
     optionalAddons: [
@@ -773,7 +773,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
       'Monthly performance audit report',
       'Priority emergency hotline support'
     ],
-    quotationNotice: 'Free ya unlimited maintenance ka waada nahi kiya jata; har maintenance arrangement defined scope aur agreed terms par hoti hai.',
+    quotationNotice: 'The final scope, deliverables, integrations, and any third-party costs are confirmed in the written quotation.',
     relevantProjectIds: ['sk-portfolio', 'dccid']
   }
 ];

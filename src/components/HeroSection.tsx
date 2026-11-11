@@ -41,13 +41,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
     window.speechSynthesis.cancel();
     
-    // Clean Roman Urdu text
+    // Prepare the English welcome message for speech
     const cleanSpeech = ROBOT_WELCOME_TEXT
       .replace(/[#*_`~>•]/g, ' ')
       .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '');
 
     const utterance = new SpeechSynthesisUtterance(cleanSpeech);
-    utterance.rate = 0.95;
+    utterance.lang = 'en-US';\n    utterance.rate = 0.95;
     utterance.pitch = 1.05;
 
     const voices = window.speechSynthesis.getVoices();
@@ -236,7 +236,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#918fa1] truncate mt-0.5">
-                  {isSpeaking ? 'Bol raha hoon... (Voice Active in Roman Urdu)' : 'Ready to introduce services, packages & pricing in Roman Urdu.'}
+                  {isSpeaking ? 'Speaking... (English voice active)' : 'Ready to explain services, packages, and pricing in English.'}
                 </p>
               </div>
             </div>
@@ -332,7 +332,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   className="px-3.5 py-1.5 rounded-lg bg-[#282a2f] hover:bg-[#33353a] text-[#44dfab] text-xs font-semibold transition-colors flex items-center gap-1"
                 >
                   <Volume2 className="w-3.5 h-3.5" />
-                  <span>{isSpeaking ? 'Stop Audio' : 'Sunne ke liye Play karein'}</span>
+                  <span>{isSpeaking ? 'Stop Audio' : 'Play welcome message'}</span>
                 </button>
               </div>
             </div>

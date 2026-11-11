@@ -74,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({
                 onClick={onOpenRobot}
                 className="text-left text-[#44dfab] hover:underline transition-colors flex items-center gap-1 font-medium"
               >
-                <span>🤖 AI Robot Assistant (Roman Urdu)</span>
+                <span>🤖 AI Robot Assistant (English)</span>
               </button>
               <button
                 type="button"
@@ -160,7 +160,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex items-center gap-2">
             <span>© {new Date().getFullYear()} SK DEV TEAM. All rights reserved.</span>
             <span>·</span>
-            <span className="text-[#c7c4d8]">Lead Developer: Suhail Ahmed</span>
+            <span className="text-[#c7c4d8]">Founder: Suhail Ahmed Aamro</span>
           </div>
 
           <div className="flex items-center gap-4">

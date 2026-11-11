@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             type="button"
             onClick={onOpenRobot}
             className="hidden sm:flex items-center justify-center gap-1.5 px-2 sm:px-3 py-2 rounded-xl bg-[#1e1f25] hover:bg-[#282a2f] text-[#c4c0ff] border border-[#8781ff]/40 shadow-sm transition-all text-xs sm:text-sm font-semibold shrink-0"
-            title="Open Roman Urdu AI Guide Robot"
+            title="Open English AI Guide Robot"
           >
             <Bot className="w-4 h-4 text-[#8781ff] animate-bounce" />
             <span className="hidden md:inline">AI Robot Guide</span>

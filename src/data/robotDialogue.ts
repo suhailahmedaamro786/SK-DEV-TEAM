@@ -1,100 +1,93 @@
 import { PackageTier, QuickAction } from '../types';
 
-export const ROBOT_WELCOME_TEXT = `👋 Assalam-o-Alaikum! SK DEV TEAM mein khush aamdeed! 🤖✨
+export const ROBOT_WELCOME_TEXT = `👋 Welcome to SK DEV TEAM! 🤖✨
 
-Main aap ka digital assistant hoon. Main aap ko hamari tamam services, packages aur project options detail mein samjha sakta hoon.
+I am your digital assistant. I can explain our services, packages, and project options in clear English.
 
-Aap business website, online store, WhatsApp ordering system, school management software, admin dashboard, appointment booking system, AI assistant ya koi custom web application banwana chahte hain, to main aap ki rehnumai kar sakta hoon.
+Whether you need a business website, online store, WhatsApp ordering system, school management software, admin dashboard, appointment booking system, AI assistant, or a custom web application, I am here to guide you.
 
-Main aap ko Small, Medium aur Premium packages ka farq bhi samjhaunga, taake aap apni requirements ke mutabiq behtar option choose kar sakein.
+I can also explain the differences between our Small, Medium, and Premium packages so you can choose the option that best matches your requirements.
 
-Aap hamare projects ke demos dekh sakte hain, application form submit kar sakte hain, ya hamari team se WhatsApp aur email par rabta kar sakte hain.
+You can explore our project demos, submit a project inquiry, or contact our team through WhatsApp or email.
 
-Aap kis service ke baare mein maloomat lena chahte hain? 🚀`;
+What would you like to learn about today? 🚀`;
 
-export const ROBOT_CONTACT_SCRIPT = `Agar aap ko hamari services pasand aayi hain aur aap apne project par baat karna chahte hain, to aap WhatsApp par hamari team se rabta kar sakte hain (+92 315 3558383). Aap email bhi bhej sakte hain (suhailahmedaamro786@gmail.com), ya website ka project inquiry form fill karke apni application submit kar sakte hain.
+export const ROBOT_CONTACT_SCRIPT = `If you are interested in our services and would like to discuss your project, contact our team on WhatsApp at +92 315 3558383. You can also email us at suhailahmedaamro786@gmail.com or submit the project inquiry form on this website.
 
-Form mein apni requirements aur preferred package batayein. Hamari team aap ke project ki details review karke quotation aur next steps ke baare mein guide kar sakegi.
+Please include your requirements and preferred package in the form. Our team will review your project details and guide you through the quotation and next steps.
 
-SK DEV TEAM ko apna waqt dene aur hum par trust karne ka bohat shukriya! 🤝✨`;
+Thank you for considering SK DEV TEAM and for placing your trust in us! 🤝✨`;
 
 export const ROBOT_PRIMARY_ACTIONS: QuickAction[] = [
   { label: '🛠️ All Services', actionKey: 'show_all_services' },
-  { label: '📦 Small / Medium / Premium', actionKey: 'explain_packages_general' },
+  { label: '📦 Compare Packages', actionKey: 'explain_packages_general' },
   { label: '💰 Pricing Information', actionKey: 'explain_pricing_policy' },
   { label: '💼 Project Demos', actionKey: 'show_demos' },
-  { label: '🧭 Help Me Choose (Wizard)', actionKey: 'start_wizard' },
-  { label: '📝 Submit Application', actionKey: 'go_to_form' },
+  { label: '🧭 Help Me Choose', actionKey: 'start_wizard' },
+  { label: '📝 Submit an Inquiry', actionKey: 'go_to_form' },
   { label: '💬 WhatsApp Contact', actionKey: 'open_whatsapp' },
   { label: '📩 Email Contact', actionKey: 'open_email' }
 ];
 
-export const ROBOT_PACKAGE_COMPARISON_GENERAL = `Small package basic requirements aur limited scope ke liye hota hai. Medium package mein zyada pages, features ya workflows shamil ho sakte hain. Premium package un clients ke liye hota hai jinhein zyada customized ya advanced solution chahiye.
+export const ROBOT_PACKAGE_COMPARISON_GENERAL = `The Small package is designed for essential requirements and a focused project scope. The Medium package can include more pages, features, and workflows. The Premium package is intended for clients who need a highly customized or advanced solution.
 
-Final package aap ki exact requirements dekh kar decide hota hai:
+The final package is selected after reviewing your exact requirements.
 
-🔹 **Small Package**:
-- New business ya initial online presence ke liye behtareen hai.
-- Compact structure, essential pages/sections, direct WhatsApp/contact buttons.
-- Quick delivery aur budget-friendly MVP setup.
+🔹 **Small Package**
+- Ideal for a new business or an initial online presence.
+- A compact structure with essential pages or sections and direct contact options.
+- A practical, budget-conscious starting point.
 
-🔹 **Medium Package**:
-- Growing businesses aur active operations ke liye.
-- Multiple sections/pages, lead capture forms, dynamic catalogue/cart, enhanced on-page SEO aur smooth animations.
-- Database records ya admin operations agar agreed hon.
+🔸 **Medium Package**
+- Designed for growing businesses and active operations.
+- Multiple pages or sections, lead-capture forms, catalogues or cart features, and enhanced on-page SEO.
+- Database records and administration features when included in the agreed scope.
 
-🔹 **Premium Package**:
-- High-performance, tailored enterprise platforms ke liye.
-- Bespoke design, multi-role permissions, complex workflows, advanced integrations (Stripe, APIs, analytics, telemetry).
-- Ongoing dedicated support aur SLA quotation ke mutabiq.`;
+💎 **Premium Package**
+- Designed for tailored, advanced business platforms.
+- Custom design, role-based permissions, complex workflows, and advanced integrations.
+- Dedicated support and service-level agreements as specified in the quotation.`;
 
-export const ROBOT_PRICING_POLICY_TEXT = `💰 **SK DEV TEAM Pricing Policy**:
+export const ROBOT_PRICING_POLICY_TEXT = `💰 **SK DEV TEAM Pricing Policy**
 
-Hum kabhi bhi ghair-tasdeeq shuda (unverified) ya man-maani prices invent nahi karte. Har project ki unique requirements hoti hain, is liye:
+We do not invent unverified or arbitrary prices. Every project has different requirements, so we prepare quotations based on the agreed scope.
 
-1. **Custom Quotation**:
-Aap ki requirements, page counts, backend complexity aur desired integrations ke mutabiq precise quotation tayar ki jati hai.
-
-2. **Domain aur Hosting**:
-Domain aur hosting standard packages mein automatically included nahi hote jab tak agreement mein explicitly confirmed na ho. Agar aap chahein to hamari team domain & cloud deployment setup mein complete help karti hai.
-
-3. **External Services & Third-Party APIs**:
-Online payment gateways (jaise Stripe), SMS alerts ya live AI model tokens ke usage charges directly third-party provider ke hotay hain.
-
-4. **Future Add-ons**:
-Aap shuru mein Small ya Medium package se start kar sakte hain, aur baad mein kabhi bhi naye features ya upgrades add karwa sakte hain!`;
+1. **Custom Quotation:** Pricing is based on your requirements, page count, backend complexity, and requested integrations.
+2. **Domain and Hosting:** These are not automatically included unless explicitly stated in the quotation. Our team can help with deployment and domain configuration.
+3. **External Services and Third-Party APIs:** Payment gateways, SMS alerts, and AI model usage may involve separate provider charges.
+4. **Future Upgrades:** You can begin with a Small or Medium package and add features as your business grows.`;
 
 export const ROBOT_FAQS: { question: string; answer: string; relatedAction?: string }[] = [
   {
-    question: 'Small package mein kya milega?',
-    answer: 'Small package mein aap ko essential foundation milti hai: simple responsive layout, mobile friendly view, core information, direct WhatsApp contact aur basic SEO. Yeh un ke liye perfect hai jinhein jaldi aur budget mein reliable online presence chahiye.'
+    question: 'What is included in the Small package?',
+    answer: 'The Small package provides an essential foundation: a responsive layout, mobile-friendly design, core business information, direct WhatsApp contact, and basic SEO. It is suitable for businesses that need a straightforward online presence.'
   },
   {
-    question: 'Medium aur Premium mein kya difference hai?',
-    answer: 'Medium package mein multiple pages, lead-capture forms, dynamic catalog/cart aur structured SEO shamil hoti hai. Premium package mein fully bespoke architecture, multi-role dashboards, automated workflows, third-party API integrations aur deep customization di jati hai.'
+    question: 'What is the difference between Medium and Premium?',
+    answer: 'The Medium package can include multiple pages, lead-capture forms, catalogues or cart features, and structured SEO. The Premium package can include custom architecture, multi-role dashboards, automated workflows, third-party API integrations, and deeper customization.'
   },
   {
-    question: 'Mere business ke liye konsa package sahi hai?',
-    answer: 'Agar aap bilkul naye hain aur budget limited hai to Small se start karein. Agar aap regular leads aur customers se order lena chahte hain to Medium best hai. Agar aap ka business bada hai ya specific automation/multi-user features chahiye to Premium recommend kiya jata hai.'
+    question: 'Which package is right for my business?',
+    answer: 'The Small package is a practical starting point for a new business with limited requirements. The Medium package may suit a business that needs to generate leads and manage customer activity. The Premium package is intended for more complex workflows, automation, or multi-user features.'
   },
   {
-    question: 'Price kitni hogi?',
-    answer: 'Aap ki requirements ke mutabiq quotation tayar ki jayegi. Hum andaza laga kar ghalat price nahi batate. Aap niche inquiry form fill karein ya WhatsApp par connect karein, hamari team foran detail review karegi.'
+    question: 'How much will my project cost?',
+    answer: 'We prepare a quotation after reviewing your requirements. We do not provide misleading estimates without understanding the project scope. Submit the inquiry form or contact our team on WhatsApp to discuss your project.'
   },
   {
-    question: 'Kya domain aur hosting included hain?',
-    answer: 'Domain aur hosting standard development fees mein shamil nahi hoti, unless quotation mein explicitly confirm ki gayi ho. Lekin hamari team Vercel, Cloudflare, Netlify ya custom server par complete deployment provide karti hai.'
+    question: 'Are domain and hosting included?',
+    answer: 'Domain and hosting are not included in standard development fees unless explicitly confirmed in the quotation. Our team can assist with deployment on platforms such as Vercel, Cloudflare, Netlify, or a custom server.'
   },
   {
-    question: 'Kya baad mein features add kar sakte hain?',
-    answer: 'Ji bilkul! Hamara architecture modular hota hai. Aap shuru mein Small ya Medium se start kar sakte hain aur baad mein naye pages, payment gateway, student portal ya AI chatbot asaani se integrate karwa sakte hain.'
+    question: 'Can I add features later?',
+    answer: 'Yes. You can start with a smaller scope and add pages, payment integrations, student portals, or an AI chatbot later, subject to a separate scope and quotation.'
   }
 ];
 
 export const ROBOT_WIZARD_STEPS = [
   {
     id: 1,
-    question: '1. Aap kis type ka project banwana chahte hain?',
+    question: '1. What type of project would you like to build?',
     options: [
       { label: '🌐 Business Website', value: 'Business Website Development' },
       { label: '🛍️ E-Commerce / Online Store', value: 'E-commerce Website' },
@@ -108,43 +101,43 @@ export const ROBOT_WIZARD_STEPS = [
   },
   {
     id: 2,
-    question: '2. Aap ko kaun se main features chahiye?',
+    question: '2. Which key features do you need?',
     options: [
-      { label: 'Mobile Responsive + WhatsApp button', value: 'Basic Responsive + WhatsApp' },
+      { label: 'Mobile Responsive + WhatsApp Button', value: 'Basic Responsive + WhatsApp' },
       { label: 'Product Catalogue + Shopping Cart', value: 'Catalogue + Cart' },
-      { label: 'Online Payment (Stripe / Gateway)', value: 'Payment Gateway' },
+      { label: 'Online Payment Gateway', value: 'Payment Gateway' },
       { label: 'Admin Login + Data Management', value: 'Admin Portal & Database' },
       { label: 'Calendar Booking + Notifications', value: 'Calendar Sync' },
-      { label: 'AI Natural Language Guidance', value: 'AI Agent' }
+      { label: 'AI-Powered Guidance', value: 'AI Agent' }
     ]
   },
   {
     id: 3,
-    question: '3. Aap ka preferred package konsa hai?',
+    question: '3. Which package do you prefer?',
     options: [
       { label: '🔹 Small Package (Starter / Essential)', value: 'Small' },
       { label: '🔸 Medium Package (Growing / Custom)', value: 'Medium' },
-      { label: '💎 Premium Package (Advanced Enterprise)', value: 'Premium' },
-      { label: '❓ Not Sure Yet (Team Se Mashwara)', value: 'Not Sure Yet' }
+      { label: '💎 Premium Package (Advanced / Enterprise)', value: 'Premium' },
+      { label: '❓ Not Sure Yet — I Need Advice', value: 'Not Sure Yet' }
     ]
   },
   {
     id: 4,
-    question: '4. Kya aap apna estimated budget share karna chahenge? (Optional)',
+    question: '4. Would you like to share your estimated budget? (Optional)',
     options: [
-      { label: 'Starter / Sprint MVP ($300 - $800)', value: '$300 - $800' },
-      { label: 'Production Commercial ($800 - $2,500)', value: '$800 - $2,500' },
-      { label: 'Full Enterprise Solution ($2,500+)', value: '$2,500+' },
-      { label: 'Pehle Scope & Quotation Discuss Karni Hai', value: 'To be discussed' }
+      { label: 'Starter / MVP ($300–$800)', value: '$300 - $800' },
+      { label: 'Production Commercial ($800–$2,500)', value: '$800 - $2,500' },
+      { label: 'Enterprise Solution ($2,500+)', value: '$2,500+' },
+      { label: 'I Would Like to Discuss the Scope First', value: 'To be discussed' }
     ]
   },
   {
     id: 5,
-    question: '5. Kya aap inquiry application form submit karna chahte hain ya pehle team se WhatsApp par baat karna chahte hain?',
+    question: '5. How would you like to contact our team?',
     options: [
-      { label: '📝 Fill Project Application Form', value: 'form' },
-      { label: '💬 Chat Directly on WhatsApp (+92 315 3558383)', value: 'whatsapp' },
-      { label: '📩 Send Details via Email', value: 'email' }
+      { label: '📝 Submit the Project Inquiry Form', value: 'form' },
+      { label: '💬 Chat on WhatsApp (+92 315 3558383)', value: 'whatsapp' },
+      { label: '📩 Send Details by Email', value: 'email' }
     ]
   }
 ];

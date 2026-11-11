@@ -516,7 +516,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
         subtitle: 'Guided Sales & Inquiry Assistant',
         features: [
           'Advanced conversational logic and intent matching',
-          'Detailed service & package breakdowns in Roman Urdu / English',
+          'Detailed service and package explanations in English',
           'Context-aware lead capture form guidance',
           'Connected knowledge base or custom API integration (if configured ho)',
           'Modern sleek chat UI with voice synthesis audio option'
@@ -540,7 +540,7 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     },
     optionalAddons: [
       'Voice synthesis / audio playback in browser',
-      'Multi-language English and Roman Urdu toggle',
+      'English-language assistant responses and voice output',
       'CRM lead auto-forwarding',
       'Custom vector database for private documents'
     ],

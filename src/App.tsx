@@ -198,7 +198,7 @@ export default function App() {
         <div className="hidden md:flex flex-col items-end pointer-events-none">
           <span className="px-3 py-1.5 rounded-xl bg-[#1e1f25]/95 backdrop-blur-md border border-[#8781ff]/40 text-xs font-semibold text-[#e2e2e9] shadow-xl flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-[#44dfab]" />
-            <span>Roman Urdu Guide Robot</span>
+            <span>English Guide Robot</span>
           </span>
         </div>
 

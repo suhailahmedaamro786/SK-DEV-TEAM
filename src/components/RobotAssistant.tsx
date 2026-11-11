@@ -193,7 +193,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
     );
 
     if (matchedService) {
-      const replyText = `🛠️ **${matchedService.title}**:\n\n${matchedService.romanUrduIntro}\n\n👥 **Kisko chahiye:** ${matchedService.whoNeedsIt}\n\n💡 **Masla jo hal hota hai:** ${matchedService.problemSolved}\n\nAap is ke Small, Medium ya Premium packages ka muwazna dekhna chahte hain?`;
+      const replyText = `🛠️ **${matchedService.title}**:\n\nExplore this service to understand how it can support your business and improve your digital operations.\n\n👥 **Who It Is For:** Businesses and professionals looking for this type of digital solution.\n\n💡 **What It Helps Solve:** It helps organize workflows, improve customer experiences, and strengthen your online presence.\n\nWould you like to compare the Small, Medium, and Premium packages?`;
       
       setMessages(prev => [
         ...prev,
@@ -258,7 +258,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
         {
           id: `robot-${Date.now()}`,
           sender: 'robot',
-          text: `🌐 **Domain & Hosting Information:**\n\nStandard development packages mein domain aur hosting automatically included nahi hotay, jab tak agreement mein explicitly shamil na hon.\n\nLekin hamari team aap ke liye reliable platform (Vercel, Cloudflare, Netlify ya VPS) par deployment complete karke deti hai aur domain DNS setup mein poori guide karti hai.`,
+          text: `🌐 **Domain & Hosting Information:**\n\nDomain and hosting are not automatically included in standard development packages unless they are explicitly listed in the agreement. Our team can deploy your project to Vercel, Cloudflare, Netlify, or a VPS and guide you through domain and DNS configuration.`,
           quickActions: [
             { label: '💬 Discuss Deployment on WhatsApp', actionKey: 'open_whatsapp' },
             { label: '📝 Submit Project Scope', actionKey: 'go_to_form' }
@@ -312,7 +312,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
       {
         id: `robot-${Date.now()}`,
         sender: 'robot',
-        text: `Aap ka sawal note kar liya gaya hai! 🤝\n\nHum ghair-tasdeeq shuda ya man-maani information invent nahi karte. Aap ke is specific sawal par accurate guide karne ke liye hamare lead engineer, Suhail Ahmed aur team available hain.\n\nAap WhatsApp (+92 315 3558383) par direct pooch sakte hain, ya application form submit kar sakte hain:`,
+        text: `Thank you for your question! 🤝\n\nWe do not invent unverified information. Our founder, Suhail Ahmed Aamro, and the SK DEV TEAM are available to guide you.\n\nContact us on WhatsApp (+92 315 3558383) or submit the project inquiry form:`,
         quickActions: [
           { label: '💬 WhatsApp Par Poochein', actionKey: 'open_whatsapp' },
           { label: '📝 Application Form Fill Karein', actionKey: 'go_to_form' },
@@ -390,7 +390,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
         if (action.payload) {
           const { service, tier } = action.payload;
           const pkg = tier === 'Small' ? service.packages.small : tier === 'Medium' ? service.packages.medium : service.packages.premium;
-          const msgText = `📦 **${service.title} — ${pkg.name}**\n*${pkg.subtitle}*\n\n✅ **Features shamil hain:**\n${pkg.features.map((f: string) => `• ${f}`).join('\n')}\n\n🎯 **Kiske liye best hai:** ${pkg.suitableFor}\n\n📌 **Quotation Note:** ${pkg.quotationRequirements || 'Agreed scope ke mutabiq.'}`;
+          const msgText = `📦 **${service.title} — ${pkg.name}**\n*${pkg.subtitle}*\n\n✅ **Included Features:**\n${pkg.features.map((f: string) => `• ${f}`).join('\n')}\n\n🎯 **Best Suited For:** ${pkg.suitableFor}\n\n📌 **Quotation Note:** ${pkg.quotationRequirements || 'Subject to the agreed project scope.'}`;
           
           setMessages(prev => [
             ...prev,
@@ -428,7 +428,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
         if (action.payload?.service) {
           const sName = action.payload.service.title;
           const tier = action.payload.tier || 'Small';
-          const msg = encodeURIComponent(`Assalam-o-Alaikum SK DEV TEAM! Main aap ki service "${sName}" ke ${tier} package ke baare mein quotation aur timeline lena chahta hoon.`);
+          const msg = encodeURIComponent(`Hello SK DEV TEAM! I would like to request a quotation and timeline for the ${tier} package of your service: ${sName}.`);
           window.open(`https://wa.me/923153558383?text=${msg}`, '_blank');
         }
         break;
@@ -459,7 +459,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
       const budget = updated[4] || 'To be discussed';
       const nextStep = updated[5] || 'form';
 
-      const summaryText = `🎉 **Mubarak ho! Your requirements record ho gayi hain:**\n\n📌 **Project Type:** ${projectType}\n⚙️ **Core Features:** ${features}\n📦 **Recommended Package:** ${packageTier}\n💰 **Estimated Budget:** ${budget}\n\nAb agla step chunien:`;
+      const summaryText = `🎉 **Thank you! Your requirements have been recorded:**\n\n📌 **Project Type:** ${projectType}\n⚙️ **Core Features:** ${features}\n📦 **Recommended Package:** ${packageTier}\n💰 **Estimated Budget:** ${budget}\n\nChoose your next step:`;
 
       setMessages(prev => [
         ...prev,
@@ -1103,7 +1103,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                 Verified Pricing Rules
               </span>
               <p className="text-xs sm:text-sm text-[#c7c4d8] leading-relaxed">
-                “Final package aur quotation aap ki exact requirements, page counts aur integrations dekh kar decide hota hai. Hum bina scope samjhe ghalat ya fabricated prices nahi batate.”
+                “The final package and quotation depend on your exact requirements, page count, and integrations. We do not provide inaccurate or fabricated prices without reviewing the project scope.”
               </p>
             </div>
           </div>

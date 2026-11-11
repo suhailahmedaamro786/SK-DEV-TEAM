@@ -101,15 +101,14 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
       .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '');
 
     const utterance = new SpeechSynthesisUtterance(cleanedText);
-    utterance.lang = 'en-US';\n    utterance.rate = 0.95;
+    utterance.lang = 'en-US';
+    utterance.rate = 0.95;
     utterance.pitch = 1.05;
 
     // Pick best English or regional voice if present
     const voices = window.speechSynthesis.getVoices();
     const naturalVoice = voices.find(v => 
-      v.lang.includes('ur') || 
-      v.lang.includes('hi') || 
-      (v.lang.includes('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')))
+      v.lang.toLowerCase().startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha'))
     );
     if (naturalVoice) {
       utterance.voice = naturalVoice;
@@ -314,10 +313,10 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
         sender: 'robot',
         text: `Thank you for your question! 🤝\n\nWe do not invent unverified information. Our founder, Suhail Ahmed Aamro, and the SK DEV TEAM are available to guide you.\n\nContact us on WhatsApp (+92 315 3558383) or submit the project inquiry form:`,
         quickActions: [
-          { label: '💬 WhatsApp Par Poochein', actionKey: 'open_whatsapp' },
-          { label: '📝 Application Form Fill Karein', actionKey: 'go_to_form' },
-          { label: '🛠️ All Services Dekhein', actionKey: 'show_all_services' },
-          { label: '📦 Packages Compare Karein', actionKey: 'explain_packages_general' }
+          { label: '💬 Ask on WhatsApp', actionKey: 'open_whatsapp' },
+          { label: '📝 Complete Inquiry Form', actionKey: 'go_to_form' },
+          { label: '🛠️ View All Services', actionKey: 'show_all_services' },
+          { label: '📦 Compare Packages', actionKey: 'explain_packages_general' }
         ]
       }
     ]);
@@ -515,7 +514,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                   SK Core Sales Robot
                 </span>
                 <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#44dfab]/15 text-[#44dfab] border border-[#44dfab]/30">
-                  Roman Urdu Guide
+                  English Guide
                 </span>
               </div>
               <span className="text-xs text-[#918fa1] flex items-center gap-1">
@@ -799,10 +798,10 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                       </button>
                     </div>
 
-                    {/* Roman Urdu Explanation */}
+                    {/* English Explanation */}
                     <div className="p-4 rounded-xl bg-[#1e1f25] border border-[#33353a]/60 space-y-2">
                       <span className="text-xs uppercase font-bold text-[#44dfab]">
-                        Roman Urdu Wazahat:
+                        English Overview:
                       </span>
                       <p className="text-sm text-[#e2e2e9] leading-relaxed">
                         “{cur.romanUrduIntro}”
@@ -890,7 +889,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                           <ArrowRight className="w-4 h-4" />
                         </button>
                         <a
-                          href={`https://wa.me/923153558383?text=${encodeURIComponent(`Assalam-o-Alaikum SK DEV TEAM! Main aap ki service "${cur.title}" (${selectedPackageTier} Package) par quotation aur discussion karna chahta hoon.`)}`}
+                          href={`https://wa.me/923153558383?text=${encodeURIComponent(`Hello SK DEV TEAM! I would like to discuss your service "${cur.title}" (${selectedPackageTier} Package) par quotation aur discussion karna chahta hoon.`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="px-4 py-2 rounded-xl bg-[#282a2f] hover:bg-[#33353a] text-[#44dfab] font-medium text-xs sm:text-sm transition-all border border-[#44dfab]/30 flex items-center gap-1.5"

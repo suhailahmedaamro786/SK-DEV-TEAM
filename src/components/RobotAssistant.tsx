@@ -101,7 +101,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
       .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '');
 
     const utterance = new SpeechSynthesisUtterance(cleanedText);
-    utterance.rate = 0.95;
+    utterance.lang = 'en-US';\n    utterance.rate = 0.95;
     utterance.pitch = 1.05;
 
     // Pick best English or regional voice if present
@@ -169,7 +169,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
     setMessages(prev => [...prev, userMsg]);
     setInputValue('');
 
-    // Generate intelligent Roman Urdu reply
+    // Generate an English reply
     setTimeout(() => {
       respondToQuery(query);
     }, 300);
@@ -215,7 +215,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
     }
 
     // 2. Check for package comparison questions
-    if (q.includes('package') || q.includes('small') || q.includes('medium') || q.includes('premium') || q.includes('farq') || q.includes('difference')) {
+    if (q.includes('package') || q.includes('small') || q.includes('medium') || q.includes('premium') || q.includes('difference') || q.includes('difference')) {
       setMessages(prev => [
         ...prev,
         {
@@ -234,13 +234,13 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
     }
 
     // 3. Check for price / cost questions
-    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('charges') || q.includes('paise') || q.includes('paisa') || q.includes('budget') || q.includes('kitne')) {
+    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('charges') || q.includes('budget') || q.includes('how much')) {
       setMessages(prev => [
         ...prev,
         {
           id: `robot-${Date.now()}`,
           sender: 'robot',
-          text: `“Aap ki requirements ke mutabiq quotation tayar ki jayegi.”\n\n${ROBOT_PRICING_POLICY_TEXT}`,
+          text: `“Your quotation will be prepared according to your project requirements.”\n\n${ROBOT_PRICING_POLICY_TEXT}`,
           quickActions: [
             { label: '📝 Submit Application Form', actionKey: 'go_to_form' },
             { label: '💬 Ask Team on WhatsApp', actionKey: 'open_whatsapp' },
@@ -275,7 +275,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
         {
           id: `robot-${Date.now()}`,
           sender: 'robot',
-          text: `💼 **SK DEV TEAM Verified Production Demos:**\n\nAap hamari 6 verified live applications test kar sakte hain:\n\n1. **SK DEV TEAM Portfolio**: suhailahmedaamro.vercel.app\n2. **D-Pizza Storefront & Ordering**: d-pizza.shop\n3. **Education Hub (LMS)**: education-hub-dusky.vercel.app\n4. **DCCID Institutional Platform**: dccid-79522kcag-aamrosk519-3847s-projects.vercel.app\n5. **AI Appointment Booking Agent**: ai-appointment-booking-agent-omega.vercel.app\n6. **SK Builder Platform**: sk-conding.vercel.app\n\nAap kisi bhi demo par click karke uski complete architecture aur stack dekh sakte hain!`,
+          text: `💼 **SK DEV TEAM Verified Production Demos:**\n\nYou can explore our six live project demos:\n\n1. **SK DEV TEAM Portfolio**: suhailahmedaamro.vercel.app\n2. **D-Pizza Storefront & Ordering**: d-pizza.shop\n3. **Education Hub (LMS)**: education-hub-dusky.vercel.app\n4. **DCCID Institutional Platform**: dccid-79522kcag-aamrosk519-3847s-projects.vercel.app\n5. **AI Appointment Booking Agent**: ai-appointment-booking-agent-omega.vercel.app\n6. **SK Builder Platform**: sk-conding.vercel.app\n\nOpen any demo to explore its architecture and technology stack.`,
           quickActions: [
             { label: '🍕 D-Pizza Demo', actionKey: 'open_project', payload: 'd-pizza' },
             { label: '🎓 Education Hub Demo', actionKey: 'open_project', payload: 'education-hub' },
@@ -289,7 +289,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
     }
 
     // 6. Check for contact / rabta
-    if (q.includes('contact') || q.includes('rabta') || q.includes('number') || q.includes('phone') || q.includes('email') || q.includes('whatsapp')) {
+    if (q.includes('contact') || q.includes('number') || q.includes('phone') || q.includes('email') || q.includes('whatsapp')) {
       setMessages(prev => [
         ...prev,
         {
@@ -379,7 +379,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
         break;
 
       case 'open_whatsapp':
-        window.open('https://wa.me/923153558383?text=Assalam-o-Alaikum%20SK%20DEV%20TEAM!%20Main%20apne%20project%20par%20baat%20karna%20chahta%20hoon.', '_blank');
+        window.open('https://wa.me/923153558383?text=Hello%20SK%20DEV%20TEAM!%20I%20would%20like%20to%20discuss%20my%20project.', '_blank');
         break;
 
       case 'open_email':
@@ -459,7 +459,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
       const budget = updated[4] || 'To be discussed';
       const nextStep = updated[5] || 'form';
 
-      const summaryText = `🎉 **Mubarak ho! Aap ki requirements record ho gayi hain:**\n\n📌 **Project Type:** ${projectType}\n⚙️ **Core Features:** ${features}\n📦 **Recommended Package:** ${packageTier}\n💰 **Estimated Budget:** ${budget}\n\nAb agla step chunien:`;
+      const summaryText = `🎉 **Mubarak ho! Your requirements record ho gayi hain:**\n\n📌 **Project Type:** ${projectType}\n⚙️ **Core Features:** ${features}\n📦 **Recommended Package:** ${packageTier}\n💰 **Estimated Budget:** ${budget}\n\nAb agla step chunien:`;
 
       setMessages(prev => [
         ...prev,
@@ -522,7 +522,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                 {isSpeaking ? (
                   <span className="text-[#44dfab] font-medium flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#44dfab] animate-pulse" />
-                    Bol raha hoon... (Voice Active)
+                    Speaking... (English voice active)
                   </span>
                 ) : (
                   'Online · Verified Services & Pricing Guide'
@@ -538,7 +538,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                 type="button"
                 onClick={() => replayLastSpeech()}
                 className="px-2.5 py-1.5 rounded-lg bg-[#282a2f] hover:bg-[#33353a] text-[#c4c0ff] hover:text-[#e2e2e9] text-xs font-medium flex items-center gap-1.5 transition-colors"
-                title="Sunne ke liye click karein"
+                title="Click to play audio"
               >
                 <Volume2 className="w-4 h-4 text-[#8781ff]" />
                 <span className="hidden sm:inline">Play Voice</span>
@@ -548,7 +548,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                 type="button"
                 onClick={stopSpeaking}
                 className="px-2.5 py-1.5 rounded-lg bg-[#93000a]/30 hover:bg-[#93000a]/50 text-[#ffb4ab] text-xs font-medium flex items-center gap-1.5 transition-colors border border-[#ffb4ab]/30"
-                title="Awaaz band karein"
+                title="Stop audio"
               >
                 <Square className="w-3.5 h-3.5 fill-current" />
                 <span>Stop</span>
@@ -719,7 +719,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Roman Urdu ya English mein sawal likhein (e.g., E-commerce price, School system, Small package...)"
+                placeholder="Ask your question in English (e.g., E-commerce price, School system, Small package...)"
                 className="flex-1 h-11 px-4 rounded-xl bg-[#0c0e13] text-[#e2e2e9] placeholder:text-[#918fa1]/60 text-xs sm:text-sm border border-[#33353a] focus:outline-none focus:border-[#8781ff] transition-colors"
               />
               <button
@@ -809,7 +809,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
                         <div className="p-2.5 rounded-lg bg-[#282a2f]/60">
-                          <span className="text-[#918fa1] block font-semibold mb-0.5">👥 Kisko Chahiye:</span>
+                          <span className="text-[#918fa1] block font-semibold mb-0.5">👥 Who It Is For:</span>
                           <span className="text-[#c7c4d8]">{cur.whoNeedsIt}</span>
                         </div>
                         <div className="p-2.5 rounded-lg bg-[#282a2f]/60">
@@ -934,7 +934,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                   Small vs. Medium vs. Premium Comparison
                 </h3>
                 <p className="text-xs sm:text-sm text-[#918fa1]">
-                  Aap ki requirements aur scale ke mutabiq behtareen package ka intikhab
+                  Choose the best package for your requirements and business scale
                 </p>
               </div>
               <button
@@ -959,7 +959,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                   </div>
                   <h4 className="text-lg font-bold text-[#e2e2e9] mt-2">Small Package</h4>
                   <p className="text-xs text-[#918fa1] mt-1">
-                    Basic online presence aur limited scope ke liye ideal.
+                    Ideal for a basic online presence and a focused project scope.
                   </p>
                   <ul className="mt-4 space-y-2 text-xs text-[#c7c4d8]">
                     <li className="flex items-start gap-1.5">
@@ -981,7 +981,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                   </ul>
                 </div>
                 <div className="pt-3 border-t border-[#33353a]">
-                  <span className="text-[11px] text-[#918fa1] block mb-2">Quotation scope review ke baad.</span>
+                  <span className="text-[11px] text-[#918fa1] block mb-2">Quotation provided after reviewing the project scope.</span>
                   <button
                     type="button"
                     onClick={() => {
@@ -1005,7 +1005,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                   </div>
                   <h4 className="text-lg font-bold text-[#e2e2e9] mt-2">Medium Package</h4>
                   <p className="text-xs text-[#918fa1] mt-1">
-                    Growing businesses ke liye jinhein dynamic features aur leads chahiye.
+                    For growing businesses that need dynamic features and lead generation.
                   </p>
                   <ul className="mt-4 space-y-2 text-xs text-[#c7c4d8]">
                     <li className="flex items-start gap-1.5">
@@ -1026,7 +1026,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                     </li>
                     <li className="flex items-start gap-1.5">
                       <CheckCircle2 className="w-4 h-4 text-[#44dfab] flex-shrink-0 mt-0.5" />
-                      <span>Backend database records (agar agreed ho)</span>
+                      <span>Backend database records (if included in the agreed scope)</span>
                     </li>
                   </ul>
                 </div>
@@ -1055,7 +1055,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                   </div>
                   <h4 className="text-lg font-bold text-[#e2e2e9] mt-2">Premium Package</h4>
                   <p className="text-xs text-[#918fa1] mt-1">
-                    Customized enterprise workflows aur advanced integrations ke liye.
+                    For customized enterprise workflows and advanced integrations.
                   </p>
                   <ul className="mt-4 space-y-2 text-xs text-[#c7c4d8]">
                     <li className="flex items-start gap-1.5">
@@ -1160,7 +1160,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                       onClick={() => setWizardStep(prev => Math.max(1, prev - 1))}
                       className="px-3 py-1.5 rounded-lg bg-[#282a2f] text-xs font-medium text-[#918fa1] hover:text-white disabled:opacity-30 transition-colors"
                     >
-                      Peechhe (Back)
+                      Back
                     </button>
                     <button
                       type="button"

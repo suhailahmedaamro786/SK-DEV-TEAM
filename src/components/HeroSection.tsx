@@ -47,14 +47,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '');
 
     const utterance = new SpeechSynthesisUtterance(cleanSpeech);
-    utterance.lang = 'en-US';\n    utterance.rate = 0.95;
+    utterance.lang = 'en-US';
+    utterance.rate = 0.95;
     utterance.pitch = 1.05;
 
     const voices = window.speechSynthesis.getVoices();
     const naturalVoice = voices.find(v => 
-      v.lang.includes('ur') || 
-      v.lang.includes('hi') || 
-      (v.lang.includes('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')))
+      v.lang.toLowerCase().startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha'))
     );
     if (naturalVoice) utterance.voice = naturalVoice;
 
@@ -293,7 +292,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* Transcript Box with full Roman Urdu welcome message */}
+          {/* Transcript Box with full English welcome message */}
           {showTranscript && (
             <div className="mt-5 pt-5 border-t border-[#33353a] bg-[#14151a] p-5 rounded-2xl border border-[#33353a]/80 space-y-3">
               <div className="flex items-start justify-between gap-4">
@@ -301,7 +300,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <Bot className="w-5 h-5 text-[#8781ff] flex-shrink-0 mt-0.5" />
                   <div className="space-y-2">
                     <span className="text-xs uppercase font-bold text-[#44dfab]">
-                      Mascot Roman Urdu Introduction Transcript
+                      English Robot Introduction
                     </span>
                     <p className="text-xs sm:text-sm text-[#e2e2e9] whitespace-pre-line leading-relaxed">
                       {ROBOT_WELCOME_TEXT}

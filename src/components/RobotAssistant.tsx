@@ -181,7 +181,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
     const matchedService = SERVICES_CATALOGUE.find(s => 
       q.includes(s.title.toLowerCase()) ||
       q.includes(s.id.toLowerCase()) ||
-      (s.id === 'ecommerce-website' && (q.includes('ecommerce') || q.includes('e-commerce') || q.includes('store') || q.includes('shop') || q.includes('dukan'))) ||
+      (s.id === 'ecommerce-website' && (q.includes('ecommerce') || q.includes('e-commerce') || q.includes('store') || q.includes('shop') || q.includes('store'))) ||
       (s.id === 'whatsapp-ordering' && (q.includes('whatsapp') && (q.includes('order') || q.includes('food') || q.includes('menu')))) ||
       (s.id === 'school-management' && (q.includes('school') || q.includes('education') || q.includes('college') || q.includes('lms') || q.includes('student'))) ||
       (s.id === 'admin-dashboards' && (q.includes('admin') || q.includes('dashboard') || q.includes('crm') || q.includes('panel'))) ||
@@ -287,7 +287,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
       return;
     }
 
-    // 6. Check for contact / rabta
+    // 6. Check for contact details
     if (q.includes('contact') || q.includes('number') || q.includes('phone') || q.includes('email') || q.includes('whatsapp')) {
       setMessages(prev => [
         ...prev,
@@ -889,7 +889,7 @@ export const RobotAssistant: React.FC<RobotAssistantProps> = ({
                           <ArrowRight className="w-4 h-4" />
                         </button>
                         <a
-                          href={`https://wa.me/923153558383?text=${encodeURIComponent(`Hello SK DEV TEAM! I would like to discuss your service "${cur.title}" (${selectedPackageTier} Package) par quotation aur discussion karna chahta hoon.`)}`}
+                          href={`https://wa.me/923153558383?text=${encodeURIComponent(`Hello SK DEV TEAM! I would like to discuss your service "${cur.title}" (${selectedPackageTier} Package) and request a quotation and project discussion.`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="px-4 py-2 rounded-xl bg-[#282a2f] hover:bg-[#33353a] text-[#44dfab] font-medium text-xs sm:text-sm transition-all border border-[#44dfab]/30 flex items-center gap-1.5"

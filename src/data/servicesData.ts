@@ -7,9 +7,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'language',
     badge: 'Core Online Presence',
     summary: 'Ultra-fast, responsive corporate websites engineered for brand authority, lead generation, and effortless updates.',
-    romanUrduIntro: 'A business website aap ke business ka online office hoti hai. Is par clients aap ki services, business information, photos aur contact details dekh sakte hain.',
-    whoNeedsIt: 'Chhoti, darmiyani aur bari companies, professional firms, consultants, real estate agencies aur clinics jo market mein apni digital pehchan mazboot banana chahte hain.',
-    problemSolved: 'Agar aap ki online website nahi hai to clients aap par jaldi trust nahi karte. Business website aap ke business ko 24/7 credible aur easily reachable banati hai.',
+    romanUrduIntro: 'A business website is your company\'s online headquarters. It presents your services, business information, images, and contact details to potential customers.',
+    whoNeedsIt: 'Small, medium, and large companies, professional firms, consultants, real estate agencies, and clinics that want to strengthen their online presence.',
+    problemSolved: 'Without a professional website, potential customers may find it harder to trust or contact your business. A website makes your business accessible and credible around the clock.',
     packages: {
       small: {
         name: 'Small Package',
@@ -74,9 +74,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'palette',
     badge: 'Personal Branding',
     summary: 'Showcase your creative work, skills, and client proof with high-conviction visual design and fast load speeds.',
-    romanUrduIntro: 'Portfolio website aap ke personal career, skills aur previous projects ka live showroom hai. Is par prospective clients ya employers aap ka real proof-of-work dekh sakte hain.',
-    whoNeedsIt: 'Developers, designers, freelancers, consultants, photographers, agencies, students aur professionals jo apna personal brand elevate karna chahte hain.',
-    problemSolved: 'Simple PDF resume se client impress nahi hota. Ek live interactive portfolio aap ke actual caliber aur execution speed ko prove karta hai.',
+    romanUrduIntro: 'A portfolio website is a live showcase of your career, skills, and previous projects. It helps prospective clients and employers review your actual work.',
+    whoNeedsIt: 'Developers, designers, freelancers, consultants, photographers, agencies, students, and professionals building a personal brand.',
+    problemSolved: 'A basic PDF résumé may not fully demonstrate your abilities. An interactive portfolio presents real projects and evidence of your skills.',
     packages: {
       small: {
         name: 'Small Package',
@@ -133,9 +133,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'shopping_bag',
     badge: 'Digital Commerce',
     summary: 'Full-featured online stores engineered with responsive catalogues, cart state, secure checkouts, and order routing.',
-    romanUrduIntro: 'E-commerce website aap ki online dukan hoti hai jahan customers aap ki products browse karte hain, cart mein add karte hain aur order place karte hain.',
-    whoNeedsIt: 'Retail businesses, fashion brands, electronics sellers, grocery stores, homemade food brands aur manufacturers jo direct-to-consumer sell karna chahte hain.',
-    problemSolved: 'Manual WhatsApp par har dafa pictures aur prices bhejna thaka dene wala kaam hai. E-commerce store catalogue aur orders ko automate kar deta hai.',
+    romanUrduIntro: 'An e-commerce website lets customers browse products, add items to a shopping cart, and place orders online.',
+    whoNeedsIt: 'Retail businesses, fashion brands, electronics sellers, grocery stores, food brands, and manufacturers selling directly to customers.',
+    problemSolved: 'Managing product photos, prices, and orders manually can take time. An online store organizes product information and streamlines the ordering process.',
     packages: {
       small: {
         name: 'Small Package',
@@ -194,9 +194,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'chat',
     badge: 'Quick Conversions',
     summary: 'Frictionless food and retail ordering where visitors fill a cart and send formatted orders directly to your WhatsApp.',
-    romanUrduIntro: 'Customer aap ki website par products ya food menu select karta hai, delivery details enter karta hai, aur single click par pura formatted order aap ke WhatsApp number par bhej deta hai.',
-    whoNeedsIt: 'Restaurants, cafes, cloud kitchens, bakeries, clothing boutiques aur local vendors jahan customer WhatsApp par rabta karna prefer karta hai.',
-    problemSolved: 'Customer ko menu ki list type karne ki zaroorat nahi rehti; items, quantities aur delivery location ek clean message ban kar seedha WhatsApp par pohonchti hai.',
+    romanUrduIntro: 'Customers select products or menu items on your website, enter delivery details, and send a formatted order directly to your WhatsApp number.',
+    whoNeedsIt: 'Restaurants, cafés, cloud kitchens, bakeries, clothing boutiques, and local vendors that accept orders through WhatsApp.',
+    problemSolved: 'Customers do not need to type out their order manually. Items, quantities, and delivery details are organized into a message and sent to your WhatsApp.',
     packages: {
       small: {
         name: 'Small Package',
@@ -254,9 +254,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'school',
     badge: 'Institutional LMS',
     summary: 'Academic governance engines featuring student registries, role-based dashboards, attendance tracking, and syllabus distribution.',
-    romanUrduIntro: 'Education Management System school, college ya academy ki daily operations jaise admission, fee records, attendance aur student reports ko organize karne ka software hai.',
-    whoNeedsIt: 'Schools, colleges, coaching centres, academies, tuition hubs aur online courses provide karne wale institutes.',
-    problemSolved: 'Kaghzi registers aur bikhri hui Excel sheets mein data kho jata hai. Centralized LMS tamam records ko aik jaga secure karta hai.',
+    romanUrduIntro: 'An education management system helps schools, colleges, and academies organize admissions, fee records, attendance, and student reports.',
+    whoNeedsIt: 'Schools, colleges, coaching centres, academies, tuition centres, and online learning providers.',
+    problemSolved: 'Paper registers and scattered spreadsheets make records difficult to manage. A centralized system keeps information organized in one place.',
     packages: {
       small: {
         name: 'Small Package',
@@ -314,9 +314,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'dashboard_customize',
     badge: 'Operational Command',
     summary: 'Operational consoles, live KPI visualizers, role-based controls, inventory monitors, and exportable data tables.',
-    romanUrduIntro: 'Admin Dashboard aap ke business ka control room hota hai jahan aap metrics, users, orders, revenue aur system data ko live manage aur monitor kar sakte hain.',
-    whoNeedsIt: 'Business owners, operations managers, SaaS companies, logistics firms aur organizations jo apne data par real-time control chahte hain.',
-    problemSolved: 'Bikhre hue WhatsApp messages aur spreadsheets se business ki real performance samajh nahi aati. Dashboard sab kuch visual aur actionable banata hai.',
+    romanUrduIntro: 'An admin dashboard is a central workspace for managing and monitoring business metrics, users, orders, revenue, and operational data.',
+    whoNeedsIt: 'Business owners, operations managers, SaaS companies, logistics firms, and organizations that need clear access to their operational data.',
+    problemSolved: 'Scattered messages and spreadsheets make performance difficult to understand. A dashboard brings key information together in a visual, actionable format.',
     packages: {
       small: {
         name: 'Small Package',
@@ -374,9 +374,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'extension',
     badge: 'Bespoke Software',
     summary: 'Tailored software architectures built from the ground up for unique business logic, SaaS models, and specialized workflows.',
-    romanUrduIntro: 'Custom web application aisi software hoti hai jo aap ki unique business zarooriyat ke mutabiq specifically zero se banayi jati hai.',
-    whoNeedsIt: 'Tech founders, innovative startups, logistics companies, healthcare providers aur specialized businesses jin ka kaam standard templates se nahi chalta.',
-    problemSolved: 'Ready-made off-the-shelf software aap ke specific process par fit nahi hoti aur monthly mehengi subscriptions leti hai. Custom app aap ka apna asset hoti hai.',
+    romanUrduIntro: 'A custom web application is software designed and developed around your specific business requirements and workflows.',
+    whoNeedsIt: 'Technology founders, startups, logistics companies, healthcare providers, and specialized businesses with processes that standard templates cannot support.',
+    problemSolved: 'Off-the-shelf software may not fit your workflow and can involve recurring subscription costs. A custom application is built around your own requirements.',
     packages: {
       small: {
         name: 'Small Package',
@@ -435,9 +435,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'calendar_month',
     badge: 'Scheduling Engine',
     summary: 'Frictionless scheduling engines for clinics, salons, and consultants with calendar sync, availability checks, and reminders.',
-    romanUrduIntro: 'Appointment booking system se clients aap ki available dates aur time slots dekh kar direct online booking kar sakte hain.',
-    whoNeedsIt: 'Doctors, dental clinics, beauty salons, lawyers, legal advisors, fitness trainers aur coaching consultants.',
-    problemSolved: 'Phone calls aur manual calendar notes mein double-booking ho jati hai ya appointments miss ho jati hain. Online scheduling sab organize kar deta hai.',
+    romanUrduIntro: 'An appointment booking system allows clients to view available dates and time slots and submit bookings online.',
+    whoNeedsIt: 'Doctors, dental clinics, beauty salons, lawyers, fitness trainers, and coaching consultants.',
+    problemSolved: 'Phone calls and manual calendars can lead to scheduling conflicts or missed appointments. Online scheduling helps keep bookings organized.',
     packages: {
       small: {
         name: 'Small Package',
@@ -495,9 +495,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'smart_toy',
     badge: 'Intelligent Automation',
     summary: 'Intelligent conversational agents, lead qualification assistants, and knowledge retrieval bots tailored for your business.',
-    romanUrduIntro: 'AI Assistant ya Chatbot aap ki website par aane wale visitors se guftagu karta hai, un ke sawalat ke jawabat deta hai aur leads collect karta hai.',
-    whoNeedsIt: 'Customer service businesses, e-commerce stores, B2B agencies, educational institutes aur tech platforms.',
-    problemSolved: 'Har waqt staff available nahi hota. AI assistant 24/7 ghanton instant jawabat de kar potential client ko engage rakhta hai.',
+    romanUrduIntro: 'An AI assistant or chatbot interacts with website visitors, answers questions, and can help collect project inquiries.',
+    whoNeedsIt: 'Customer service businesses, e-commerce stores, B2B agencies, educational institutes, and technology platforms.',
+    problemSolved: 'Staff may not always be available to answer questions. An AI assistant can provide guidance around the clock, subject to its configured capabilities.',
     packages: {
       small: {
         name: 'Small Package',
@@ -553,9 +553,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'settings_suggest',
     badge: 'Process Acceleration',
     summary: 'Eliminate repetitive manual tasks with webhook pipelines, database synchronization, notifications, and custom scripts.',
-    romanUrduIntro: 'Business automation aap ke roz marra ke repetitive kaamon (jaise form data transfer, notification bhejna, record update karna) ko automatic bana deti hai.',
-    whoNeedsIt: 'Businesses jo ghanton data entry aur manual follow-ups mein barbad karte hain aur apna operational waqt bachana chahte hain.',
-    problemSolved: 'Insani ghaltiyan (human errors) aur delay khatam ho jata hai; system automatically seconds mein task perform karta hai.',
+    romanUrduIntro: 'Business automation handles repetitive tasks such as transferring form data, sending notifications, and updating records.',
+    whoNeedsIt: 'Businesses that spend significant time on manual data entry and follow-ups and want to streamline routine operations.',
+    problemSolved: 'Automation can reduce repetitive manual work, delays, and avoidable data-entry errors.',
     packages: {
       small: {
         name: 'Small Package',
@@ -609,9 +609,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'rocket_launch',
     badge: 'High Conversion',
     summary: 'Single-page conversion engines designed for paid ad campaigns, product launches, event registrations, and fast leads.',
-    romanUrduIntro: 'Landing page ek aisi single-page website hoti hai jo kisi specific marketing campaign ya product launch ke liye banayi jati hai taake visitor seedha action le.',
-    whoNeedsIt: 'Course creators, event organizers, product launchers, real estate projects aur digital marketers jo Google / Facebook ads chala rahe hain.',
-    problemSolved: 'Normal website par visitor bhatak jata hai. Landing page par sirf ek clear goal hota hai: lead dena ya buy karna.',
+    romanUrduIntro: 'A landing page is a focused, single-page website created for a specific marketing campaign, service, or product launch.',
+    whoNeedsIt: 'Course creators, event organizers, product launch teams, real estate projects, and digital marketers running online campaigns.',
+    problemSolved: 'A general website can give visitors many paths to follow. A focused landing page highlights one clear action, such as submitting an inquiry or making a purchase.',
     packages: {
       small: {
         name: 'Small Package',
@@ -667,9 +667,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'search',
     badge: 'Organic Search',
     summary: 'Technical and on-page search engine optimization, meta structuring, speed enhancements, and indexing preparation.',
-    romanUrduIntro: 'SEO aap ki website ko Google aur search engines par behtar position par dikhane aur organic visitors lane ka technical amal hai.',
-    whoNeedsIt: 'Har business jo Google search se genuine clients aur customers attract karna chahta hai bina har click ke paise diye.',
-    problemSolved: 'Agar website Google par index hi nahi hogi ya slow hogi to koi client use dhund nahi sakega.',
+    romanUrduIntro: 'SEO improves how your website is presented and indexed by search engines, helping relevant visitors discover your content.',
+    whoNeedsIt: 'Businesses that want to attract customers through organic search and improve their website\'s technical quality.',
+    problemSolved: 'A website that is difficult to find, poorly structured, or slow may lose potential visitors. Technical SEO and performance improvements help address these issues.',
     packages: {
       small: {
         name: 'Small Package',
@@ -726,9 +726,9 @@ export const SERVICES_CATALOGUE: ServiceItem[] = [
     icon: 'build',
     badge: 'Stability & Upgrades',
     summary: 'Proactive security patches, library updates, content iterations, speed audits, and bug fixes to keep your platforms solid.',
-    romanUrduIntro: 'Website banne ke baad use up-to-date rakhna, bugs fix karna, naya content add karna aur speed theek rakhna maintenance kehlata hai.',
-    whoNeedsIt: 'Businesses jin ki live website chal rahi hai aur unhein technical issue aane par foran expert support chahiye hoti hai.',
-    problemSolved: 'Outdated libraries crash ho sakti hain ya website slow ho jati hai. Regular maintenance site ko safe aur active rakhti hai.',
+    romanUrduIntro: 'Website maintenance keeps a live website updated, fixes bugs, adds content, and monitors performance.',
+    whoNeedsIt: 'Businesses with an active website that need ongoing technical updates and support.',
+    problemSolved: 'Outdated dependencies can create security or reliability issues, and websites can become slower over time. Regular maintenance helps keep a site stable and up to date.',
     packages: {
       small: {
         name: 'Small Package',
